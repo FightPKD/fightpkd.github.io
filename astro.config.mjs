@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://fightpkd.github.io',
+  site: 'https://pkdcuretracker.com',
   vite: {
     plugins: [tailwindcss()]
   }
