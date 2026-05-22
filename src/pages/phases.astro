@@ -3,310 +3,448 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Clinical Trial Phases" description="Understanding clinical trial phases — how drugs move from early testing to market approval, and what it means for PKD patients.">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="mb-10">
-      <h1 class="text-3xl font-bold text-gray-900">Understanding Clinical Trial Phases</h1>
-      <p class="mt-3 text-lg text-gray-600">
-        Before a drug reaches patients, it must pass through a rigorous multi-phase testing process.
-        Here's what each phase means and how long the journey typically takes.
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mb-10 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900">The Journey of a Drug</h1>
+      <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
+        From laboratory discovery to your pharmacy — click each step to learn more.
       </p>
     </div>
 
-    <!-- Timeline overview -->
-    <div class="bg-white rounded-xl border border-gray-200 p-6 mb-10">
-      <h2 class="text-lg font-semibold text-gray-900 mb-4">The Full Journey: Discovery to Pharmacy</h2>
-      <div class="flex flex-col md:flex-row items-stretch gap-2 md:gap-0">
-        <div class="flex-1 bg-gray-50 rounded-lg md:rounded-r-none p-4 border border-gray-200 md:border-r-0">
-          <p class="text-xs font-medium text-gray-500 uppercase">Preclinical</p>
-          <p class="text-lg font-bold text-gray-900">3–6 years</p>
-          <p class="text-xs text-gray-500">Lab & animal studies</p>
-        </div>
-        <div class="flex-1 bg-teal-50 p-4 border border-teal-200">
-          <p class="text-xs font-medium text-teal-700 uppercase">Phase 1</p>
-          <p class="text-lg font-bold text-gray-900">1–2 years</p>
-          <p class="text-xs text-gray-500">Safety & dosing</p>
-        </div>
-        <div class="flex-1 bg-blue-50 p-4 border border-blue-200">
-          <p class="text-xs font-medium text-blue-700 uppercase">Phase 2</p>
-          <p class="text-lg font-bold text-gray-900">2–3 years</p>
-          <p class="text-xs text-gray-500">Efficacy & side effects</p>
-        </div>
-        <div class="flex-1 bg-purple-50 p-4 border border-purple-200">
-          <p class="text-xs font-medium text-purple-700 uppercase">Phase 3</p>
-          <p class="text-lg font-bold text-gray-900">3–4 years</p>
-          <p class="text-xs text-gray-500">Large-scale confirmation</p>
-        </div>
-        <div class="flex-1 bg-amber-50 p-4 border border-amber-200">
-          <p class="text-xs font-medium text-amber-700 uppercase">FDA Review</p>
-          <p class="text-lg font-bold text-gray-900">1–2 years</p>
-          <p class="text-xs text-gray-500">Regulatory approval</p>
-        </div>
-        <div class="flex-1 bg-emerald-50 rounded-lg md:rounded-l-none p-4 border border-emerald-200 md:border-l-0">
-          <p class="text-xs font-medium text-emerald-700 uppercase">Market</p>
-          <p class="text-lg font-bold text-gray-900">✓</p>
-          <p class="text-xs text-gray-500">Available to patients</p>
-        </div>
+    <!-- Interactive Timeline -->
+    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 mb-10 shadow-sm">
+      <div class="grid grid-cols-3 md:grid-cols-6 gap-3 md:gap-2 mb-6">
+        <button data-phase="preclinical" class="phase-btn group flex flex-col items-center gap-2 p-3 rounded-xl border-2 border-gray-200 hover:border-gray-400 transition-all cursor-pointer">
+          <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+          </div>
+          <span class="text-xs font-medium text-gray-600">Preclinical</span>
+          <span class="text-[10px] text-gray-400">3–6 yrs</span>
+        </button>
+
+        <button data-phase="phase1" class="phase-btn group flex flex-col items-center gap-2 p-3 rounded-xl border-2 border-teal-200 hover:border-teal-400 transition-all cursor-pointer">
+          <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <span class="text-xs font-medium text-teal-700">Phase 1</span>
+          <span class="text-[10px] text-gray-400">1–2 yrs</span>
+        </button>
+
+        <button data-phase="phase2" class="phase-btn group flex flex-col items-center gap-2 p-3 rounded-xl border-2 border-blue-200 hover:border-blue-400 transition-all cursor-pointer">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <span class="text-xs font-medium text-blue-700">Phase 2</span>
+          <span class="text-[10px] text-gray-400">2–3 yrs</span>
+        </button>
+
+        <button data-phase="phase3" class="phase-btn group flex flex-col items-center gap-2 p-3 rounded-xl border-2 border-purple-200 hover:border-purple-400 transition-all cursor-pointer">
+          <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <span class="text-xs font-medium text-purple-700">Phase 3</span>
+          <span class="text-[10px] text-gray-400">3–4 yrs</span>
+        </button>
+
+        <button data-phase="review" class="phase-btn group flex flex-col items-center gap-2 p-3 rounded-xl border-2 border-amber-200 hover:border-amber-400 transition-all cursor-pointer">
+          <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <span class="text-xs font-medium text-amber-700">Review</span>
+          <span class="text-[10px] text-gray-400">1–2 yrs</span>
+        </button>
+
+        <button data-phase="market" class="phase-btn group flex flex-col items-center gap-2 p-3 rounded-xl border-2 border-emerald-200 hover:border-emerald-400 transition-all cursor-pointer">
+          <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <span class="text-xs font-medium text-emerald-700">Approved</span>
+          <span class="text-[10px] text-gray-400">Market</span>
+        </button>
       </div>
-      <p class="mt-4 text-sm text-gray-500 text-center">
-        Total average timeline: <strong class="text-gray-900">10–15 years</strong> from discovery to approval
+
+      <!-- Progress bar -->
+      <div class="hidden md:flex items-center gap-1 mb-6 px-6">
+        <div class="h-1.5 flex-1 rounded-full bg-gray-200"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-teal-300"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-blue-300"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-purple-300"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-amber-300"></div>
+        <div class="h-1.5 flex-1 rounded-full bg-emerald-300"></div>
+      </div>
+
+      <p class="text-center text-sm text-gray-500 mb-4">
+        Total average: <strong class="text-gray-900">10–15 years</strong> from discovery to your pharmacy
       </p>
-    </div>
 
-    <!-- Phase details -->
-    <div class="space-y-8">
+      <!-- Detail panels (hidden by default, shown on click) -->
+      <div id="phase-details">
+        <!-- Preclinical detail -->
+        <div id="detail-preclinical" class="phase-detail hidden">
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+            <div class="flex items-start gap-4 mb-5">
+              <div class="w-14 h-14 bg-white rounded-xl border border-gray-200 flex items-center justify-center shrink-0">
+                <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900">Preclinical Research</h3>
+                <p class="text-gray-500 text-sm">Before any human ever takes the drug</p>
+              </div>
+            </div>
 
-      <!-- Preclinical -->
-      <div class="bg-white rounded-xl border border-gray-200 p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
-            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-            </svg>
-          </div>
-          <div>
-            <h2 class="text-xl font-semibold text-gray-900">Preclinical Research</h2>
-            <p class="text-sm text-gray-500">Before human testing begins</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-          <div class="bg-gray-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Duration</p>
-            <p class="font-semibold text-gray-900">3–6 years</p>
-          </div>
-          <div class="bg-gray-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Subjects</p>
-            <p class="font-semibold text-gray-900">Lab cells & animals</p>
-          </div>
-          <div class="bg-gray-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Success rate</p>
-            <p class="font-semibold text-gray-900">~10% enter Phase 1</p>
-          </div>
-        </div>
-        <p class="text-sm text-gray-600">
-          Scientists test the drug candidate in laboratory settings and animal models to understand its basic safety profile, how it behaves in the body, and whether it shows promise against the disease. For PKD, this often involves testing in mouse or rat models with cystic kidneys. Only compounds that show both safety and efficacy in animals advance to human trials.
-        </p>
-      </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+              <div class="bg-white rounded-lg p-3 border border-gray-100 text-center">
+                <svg class="w-5 h-5 text-gray-400 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <p class="text-xs text-gray-500">Duration</p>
+                <p class="font-bold text-gray-900">3–6 years</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-gray-100 text-center">
+                <svg class="w-5 h-5 text-gray-400 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+                <p class="text-xs text-gray-500">Subjects</p>
+                <p class="font-bold text-gray-900">Cells & Animals</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-gray-100 text-center">
+                <svg class="w-5 h-5 text-gray-400 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                <p class="text-xs text-gray-500">Advance rate</p>
+                <p class="font-bold text-gray-900">~10%</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-gray-100 text-center">
+                <svg class="w-5 h-5 text-gray-400 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                <p class="text-xs text-gray-500">Goal</p>
+                <p class="font-bold text-gray-900">Show promise</p>
+              </div>
+            </div>
 
-      <!-- Phase 1 -->
-      <div class="bg-white rounded-xl border border-teal-200 p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center">
-            <span class="text-teal-700 font-bold text-sm">P1</span>
-          </div>
-          <div>
-            <h2 class="text-xl font-semibold text-gray-900">Phase 1 — Safety & Dosing</h2>
-            <p class="text-sm text-gray-500">First-in-human testing</p>
+            <div class="space-y-3 text-sm text-gray-600">
+              <p>Scientists test thousands of compounds in lab dishes and animal models. For PKD, researchers use mice or rats with cystic kidneys to see if a drug can slow or stop cyst growth.</p>
+              <p>Only about <strong>1 in 10</strong> compounds that enter preclinical testing will ever be tested in humans. The vast majority are eliminated because they're toxic, don't work well enough, or can't be manufactured at scale.</p>
+            </div>
           </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-4">
-          <div class="bg-teal-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Duration</p>
-            <p class="font-semibold text-gray-900">1–2 years</p>
-          </div>
-          <div class="bg-teal-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Participants</p>
-            <p class="font-semibold text-gray-900">20–100</p>
-          </div>
-          <div class="bg-teal-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Success rate</p>
-            <p class="font-semibold text-gray-900">~63% → Phase 2</p>
-          </div>
-          <div class="bg-teal-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Primary goal</p>
-            <p class="font-semibold text-gray-900">Is it safe?</p>
-          </div>
-        </div>
-        <p class="text-sm text-gray-600 mb-3">
-          The drug is given to a small group of people (often healthy volunteers) for the first time. Researchers carefully increase the dose to find the right amount that is safe and determine how the body processes the drug (pharmacokinetics).
-        </p>
-        <div class="bg-teal-50 border border-teal-100 rounded-lg p-3">
-          <p class="text-sm text-teal-800">
-            <strong>PKD example:</strong> PYC-003 (PYC Therapeutics) is currently in Phase 1, testing their antisense therapy in healthy volunteers first, then in ADPKD patients at increasing doses.
-          </p>
-        </div>
-      </div>
 
-      <!-- Phase 2 -->
-      <div class="bg-white rounded-xl border border-blue-200 p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-            <span class="text-blue-700 font-bold text-sm">P2</span>
-          </div>
-          <div>
-            <h2 class="text-xl font-semibold text-gray-900">Phase 2 — Does It Work?</h2>
-            <p class="text-sm text-gray-500">Testing efficacy and optimal dose</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-4">
-          <div class="bg-blue-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Duration</p>
-            <p class="font-semibold text-gray-900">2–3 years</p>
-          </div>
-          <div class="bg-blue-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Participants</p>
-            <p class="font-semibold text-gray-900">100–300</p>
-          </div>
-          <div class="bg-blue-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Success rate</p>
-            <p class="font-semibold text-gray-900">~31% → Phase 3</p>
-          </div>
-          <div class="bg-blue-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Primary goal</p>
-            <p class="font-semibold text-gray-900">Does it help?</p>
-          </div>
-        </div>
-        <p class="text-sm text-gray-600 mb-3">
-          The drug is given to patients who have the disease. Researchers measure whether the drug actually works (efficacy), determine the best dose, and continue monitoring safety. This is where many drugs fail — they may be safe but not effective enough.
-        </p>
-        <div class="bg-blue-50 border border-blue-100 rounded-lg p-3">
-          <p class="text-sm text-blue-800">
-            <strong>PKD example:</strong> ABBV-CLS-628 (Calico/AbbVie) is in Phase 2 with 240 participants, measuring whether it can reduce Total Kidney Volume growth over 92 weeks. Tirzepatide is testing whether weight loss can slow PKD progression in overweight patients.
-          </p>
-        </div>
-      </div>
+        <!-- Phase 1 detail -->
+        <div id="detail-phase1" class="phase-detail hidden">
+          <div class="bg-teal-50 rounded-xl p-6 border border-teal-200">
+            <div class="flex items-start gap-4 mb-5">
+              <div class="w-14 h-14 bg-white rounded-xl border border-teal-200 flex items-center justify-center shrink-0">
+                <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900">Phase 1 — Is It Safe?</h3>
+                <p class="text-gray-500 text-sm">First time the drug is given to humans</p>
+              </div>
+            </div>
 
-      <!-- Phase 3 -->
-      <div class="bg-white rounded-xl border border-purple-200 p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-            <span class="text-purple-700 font-bold text-sm">P3</span>
-          </div>
-          <div>
-            <h2 class="text-xl font-semibold text-gray-900">Phase 3 — Large-Scale Confirmation</h2>
-            <p class="text-sm text-gray-500">The pivotal trial for approval</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-4">
-          <div class="bg-purple-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Duration</p>
-            <p class="font-semibold text-gray-900">3–4 years</p>
-          </div>
-          <div class="bg-purple-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Participants</p>
-            <p class="font-semibold text-gray-900">300–3,000+</p>
-          </div>
-          <div class="bg-purple-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Success rate</p>
-            <p class="font-semibold text-gray-900">~58% → Approval</p>
-          </div>
-          <div class="bg-purple-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Primary goal</p>
-            <p class="font-semibold text-gray-900">Confirm & compare</p>
-          </div>
-        </div>
-        <p class="text-sm text-gray-600 mb-3">
-          The drug is tested in a large, diverse population of patients, usually in a randomized, double-blind, placebo-controlled study. This is the gold standard of evidence. Results from Phase 3 form the basis of the FDA submission. For kidney disease, these trials often use kidney growth (TKV) or kidney function decline (eGFR slope) as primary endpoints.
-        </p>
-        <div class="bg-purple-50 border border-purple-100 rounded-lg p-3">
-          <p class="text-sm text-purple-800">
-            <strong>PKD examples:</strong> Metformin (IMPEDE-PKD) has 1,174 participants — the largest PKD trial to date. Dapagliflozin (STOP-PKD) is testing 420 patients over 3 years. Farabursen (Novartis) is planning its Phase 3 registrational trial after strong Phase 1b results.
-          </p>
-        </div>
-      </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+              <div class="bg-white rounded-lg p-3 border border-teal-100 text-center">
+                <svg class="w-5 h-5 text-teal-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <p class="text-xs text-gray-500">Duration</p>
+                <p class="font-bold text-gray-900">1–2 years</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-teal-100 text-center">
+                <svg class="w-5 h-5 text-teal-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                <p class="text-xs text-gray-500">Participants</p>
+                <p class="font-bold text-gray-900">20–100</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-teal-100 text-center">
+                <svg class="w-5 h-5 text-teal-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                <p class="text-xs text-gray-500">Success rate</p>
+                <p class="font-bold text-gray-900">63%</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-teal-100 text-center">
+                <svg class="w-5 h-5 text-teal-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                <p class="text-xs text-gray-500">Key question</p>
+                <p class="font-bold text-gray-900">Is it safe?</p>
+              </div>
+            </div>
 
-      <!-- FDA Review -->
-      <div class="bg-white rounded-xl border border-amber-200 p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-            <svg class="w-5 h-5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div>
-            <h2 class="text-xl font-semibold text-gray-900">Regulatory Review & Approval</h2>
-            <p class="text-sm text-gray-500">FDA (US), EMA (Europe), TGA (Australia)</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-          <div class="bg-amber-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Standard review</p>
-            <p class="font-semibold text-gray-900">10–12 months</p>
-          </div>
-          <div class="bg-amber-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Priority review</p>
-            <p class="font-semibold text-gray-900">6–8 months</p>
-          </div>
-          <div class="bg-amber-50 rounded-lg p-3">
-            <p class="text-xs text-gray-500">Breakthrough therapy</p>
-            <p class="font-semibold text-gray-900">Can be faster</p>
-          </div>
-        </div>
-        <p class="text-sm text-gray-600 mb-3">
-          The drug company submits a New Drug Application (NDA) or Biologics License Application (BLA) containing all trial data. FDA scientists review the evidence independently. Advisory committee meetings may be held. If approved, the drug can be prescribed by doctors.
-        </p>
-        <p class="text-sm text-gray-600">
-          <strong>Accelerated pathways:</strong> Drugs for serious conditions with unmet medical need (like PKD with limited treatment options) may qualify for Fast Track, Breakthrough Therapy, or Accelerated Approval designations, which can shorten the timeline significantly.
-        </p>
-      </div>
+            <div class="space-y-3 text-sm text-gray-600">
+              <p>A small group of people (often healthy volunteers) receives the drug for the first time. Doctors start with tiny doses and slowly increase, watching closely for side effects.</p>
+              <p>The goal isn't to cure anyone yet — it's to answer: <em>Can humans tolerate this drug? How does the body absorb and process it? What dose range is safe?</em></p>
+            </div>
 
-      <!-- Phase 4 -->
-      <div class="bg-white rounded-xl border border-emerald-200 p-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-            <span class="text-emerald-700 font-bold text-sm">P4</span>
-          </div>
-          <div>
-            <h2 class="text-xl font-semibold text-gray-900">Phase 4 — Post-Market Surveillance</h2>
-            <p class="text-sm text-gray-500">After approval</p>
+            <div class="mt-4 bg-white border border-teal-200 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span class="text-sm font-semibold text-teal-800">PKD Drugs Currently in Phase 1</span>
+              </div>
+              <p class="text-sm text-gray-600"><strong>PYC-003</strong> — antisense therapy targeting PKD1 mutations (Australia)<br/><strong>AZD1613</strong> — AstraZeneca's novel PAPPA-1 inhibitor (UK/US/China)</p>
+            </div>
           </div>
         </div>
-        <p class="text-sm text-gray-600">
-          After a drug is approved and on the market, ongoing studies monitor its long-term safety in the real world, explore additional uses, and study it in broader patient populations. Rare side effects that weren't seen in trials (which have limited participants) may emerge at this stage.
-        </p>
-        <div class="bg-emerald-50 border border-emerald-100 rounded-lg p-3 mt-3">
-          <p class="text-sm text-emerald-800">
-            <strong>PKD context:</strong> Tolvaptan (Jynarque) — currently the only FDA-approved drug specifically for ADPKD — continues to be studied in Phase 4 trials for long-term outcomes and combination approaches.
-          </p>
+
+        <!-- Phase 2 detail -->
+        <div id="detail-phase2" class="phase-detail hidden">
+          <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+            <div class="flex items-start gap-4 mb-5">
+              <div class="w-14 h-14 bg-white rounded-xl border border-blue-200 flex items-center justify-center shrink-0">
+                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900">Phase 2 — Does It Actually Work?</h3>
+                <p class="text-gray-500 text-sm">First real test of effectiveness in patients</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+              <div class="bg-white rounded-lg p-3 border border-blue-100 text-center">
+                <svg class="w-5 h-5 text-blue-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <p class="text-xs text-gray-500">Duration</p>
+                <p class="font-bold text-gray-900">2–3 years</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-blue-100 text-center">
+                <svg class="w-5 h-5 text-blue-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <p class="text-xs text-gray-500">Participants</p>
+                <p class="font-bold text-gray-900">100–300</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-blue-100 text-center">
+                <svg class="w-5 h-5 text-blue-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                <p class="text-xs text-gray-500">Success rate</p>
+                <p class="font-bold text-gray-900">31%</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-blue-100 text-center">
+                <svg class="w-5 h-5 text-blue-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                <p class="text-xs text-gray-500">Key question</p>
+                <p class="font-bold text-gray-900">Does it help?</p>
+              </div>
+            </div>
+
+            <div class="space-y-3 text-sm text-gray-600">
+              <p>Now the drug is given to people who actually have the disease. For PKD trials, researchers use MRI scans to measure kidney volume changes and blood tests to track kidney function (eGFR).</p>
+              <p><strong>This is where most drugs fail.</strong> About 70% of drugs that enter Phase 2 never make it to Phase 3 — they may be safe but simply don't work well enough against the disease.</p>
+            </div>
+
+            <div class="mt-4 bg-white border border-blue-200 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span class="text-sm font-semibold text-blue-800">PKD Drugs Currently in Phase 2</span>
+              </div>
+              <p class="text-sm text-gray-600"><strong>ABBV-CLS-628</strong> — 240 patients, kidney volume endpoint<br/><strong>VX-407</strong> — Vertex's precision approach (like their CF drugs)<br/><strong>Tirzepatide</strong> — weight loss drug being tested in overweight PKD patients<br/><strong>Bempedoic Acid</strong> — AMPK activator targeting cyst metabolism</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3 detail -->
+        <div id="detail-phase3" class="phase-detail hidden">
+          <div class="bg-purple-50 rounded-xl p-6 border border-purple-200">
+            <div class="flex items-start gap-4 mb-5">
+              <div class="w-14 h-14 bg-white rounded-xl border border-purple-200 flex items-center justify-center shrink-0">
+                <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900">Phase 3 — Proving It at Scale</h3>
+                <p class="text-gray-500 text-sm">The make-or-break trial for FDA approval</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+              <div class="bg-white rounded-lg p-3 border border-purple-100 text-center">
+                <svg class="w-5 h-5 text-purple-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <p class="text-xs text-gray-500">Duration</p>
+                <p class="font-bold text-gray-900">3–4 years</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-purple-100 text-center">
+                <svg class="w-5 h-5 text-purple-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <p class="text-xs text-gray-500">Participants</p>
+                <p class="font-bold text-gray-900">300–3,000+</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-purple-100 text-center">
+                <svg class="w-5 h-5 text-purple-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                <p class="text-xs text-gray-500">Success rate</p>
+                <p class="font-bold text-gray-900">58%</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-purple-100 text-center">
+                <svg class="w-5 h-5 text-purple-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <p class="text-xs text-gray-500">Key question</p>
+                <p class="font-bold text-gray-900">Confirm it works</p>
+              </div>
+            </div>
+
+            <div class="space-y-3 text-sm text-gray-600">
+              <p>Hundreds or thousands of patients across many hospitals and countries participate. Half get the real drug, half get placebo — neither patients nor doctors know who gets what (double-blind). This is the gold standard of medical evidence.</p>
+              <p>For PKD, these trials typically run <strong>2–3 years</strong> because kidney disease progresses slowly. Primary endpoints include kidney volume change (TKV) or kidney function decline (eGFR slope).</p>
+            </div>
+
+            <div class="mt-4 bg-white border border-purple-200 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <span class="text-sm font-semibold text-purple-800">PKD Drugs Currently in Phase 3</span>
+              </div>
+              <p class="text-sm text-gray-600"><strong>Metformin (IMPEDE-PKD)</strong> — 1,174 patients, largest PKD trial ever<br/><strong>Dapagliflozin (STOP-PKD)</strong> — 420 patients, 3-year SGLT2 trial<br/><strong>Farabursen (Novartis)</strong> — planning Phase 3 after kidney growth was halted in Phase 1b</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FDA Review detail -->
+        <div id="detail-review" class="phase-detail hidden">
+          <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
+            <div class="flex items-start gap-4 mb-5">
+              <div class="w-14 h-14 bg-white rounded-xl border border-amber-200 flex items-center justify-center shrink-0">
+                <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900">Regulatory Review & Approval</h3>
+                <p class="text-gray-500 text-sm">FDA (US), EMA (Europe), TGA (Australia)</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
+              <div class="bg-white rounded-lg p-3 border border-amber-100 text-center">
+                <svg class="w-5 h-5 text-amber-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <p class="text-xs text-gray-500">Standard review</p>
+                <p class="font-bold text-gray-900">10–12 months</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-amber-100 text-center">
+                <svg class="w-5 h-5 text-amber-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <p class="text-xs text-gray-500">Priority review</p>
+                <p class="font-bold text-gray-900">6–8 months</p>
+              </div>
+              <div class="bg-white rounded-lg p-3 border border-amber-100 text-center">
+                <svg class="w-5 h-5 text-amber-500 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                <p class="text-xs text-gray-500">Breakthrough</p>
+                <p class="font-bold text-gray-900">Can be faster</p>
+              </div>
+            </div>
+
+            <div class="space-y-3 text-sm text-gray-600">
+              <p>The company submits all trial data in a massive application (New Drug Application). FDA scientists independently review all evidence for safety and efficacy.</p>
+              <p><strong>Good news for PKD:</strong> Since there's only one approved treatment (tolvaptan), new PKD drugs may qualify for Priority Review or Breakthrough Therapy designation, which can significantly shorten this step.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Market detail -->
+        <div id="detail-market" class="phase-detail hidden">
+          <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+            <div class="flex items-start gap-4 mb-5">
+              <div class="w-14 h-14 bg-white rounded-xl border border-emerald-200 flex items-center justify-center shrink-0">
+                <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900">Approved — Available to Patients</h3>
+                <p class="text-gray-500 text-sm">Phase 4 post-market surveillance continues</p>
+              </div>
+            </div>
+
+            <div class="space-y-3 text-sm text-gray-600">
+              <p>The drug can now be prescribed by doctors. But monitoring continues — Phase 4 studies track long-term safety in thousands of real-world patients, looking for rare side effects that trials couldn't detect.</p>
+              <p>For PKD, it took <strong>tolvaptan (Jynarque) over 15 years</strong> from first trials to FDA approval in 2018. It remains the only drug specifically approved for ADPKD.</p>
+            </div>
+
+            <div class="mt-4 bg-white border border-emerald-200 rounded-lg p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span class="text-sm font-semibold text-emerald-800">Currently Approved for PKD</span>
+              </div>
+              <p class="text-sm text-gray-600"><strong>Tolvaptan (Jynarque)</strong> — slows kidney growth, but requires liver monitoring and causes significant thirst/urination. Not suitable for all patients.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Default state: prompt to click -->
+        <div id="detail-prompt" class="text-center py-8 text-gray-400">
+          <svg class="w-10 h-10 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+          </svg>
+          <p class="text-sm">Click any phase above to learn more</p>
         </div>
       </div>
     </div>
 
     <!-- Key stats -->
-    <div class="mt-10 bg-gradient-to-br from-primary-50 to-accent-50 rounded-xl border border-primary-200 p-6">
-      <h2 class="text-lg font-semibold text-gray-900 mb-4">Key Statistics</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl border border-primary-200 p-6 md:p-8 mb-10 shadow-sm">
+      <h2 class="text-xl font-bold text-gray-900 mb-6 text-center">The Big Picture</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         <div class="text-center">
-          <p class="text-3xl font-bold text-gray-900">~10%</p>
-          <p class="text-sm text-gray-600">of drugs entering Phase 1 eventually get approved</p>
+          <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-2 shadow-sm">
+            <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
+          </div>
+          <p class="text-2xl md:text-3xl font-bold text-gray-900">~10%</p>
+          <p class="text-xs md:text-sm text-gray-600">of drugs that enter trials get approved</p>
         </div>
         <div class="text-center">
-          <p class="text-3xl font-bold text-gray-900">10–15 yrs</p>
-          <p class="text-sm text-gray-600">average total development time</p>
+          <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-2 shadow-sm">
+            <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <p class="text-2xl md:text-3xl font-bold text-gray-900">10–15</p>
+          <p class="text-xs md:text-sm text-gray-600">years from lab to pharmacy</p>
         </div>
         <div class="text-center">
-          <p class="text-3xl font-bold text-gray-900">$1–2B</p>
-          <p class="text-sm text-gray-600">average cost to develop one drug</p>
+          <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-2 shadow-sm">
+            <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <p class="text-2xl md:text-3xl font-bold text-gray-900">$1–2B</p>
+          <p class="text-xs md:text-sm text-gray-600">cost to develop one drug</p>
         </div>
         <div class="text-center">
-          <p class="text-3xl font-bold text-gray-900">1</p>
-          <p class="text-sm text-gray-600">FDA-approved drug for ADPKD (tolvaptan, 2018)</p>
+          <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-2 shadow-sm">
+            <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <p class="text-2xl md:text-3xl font-bold text-gray-900">1</p>
+          <p class="text-xs md:text-sm text-gray-600">approved drug for ADPKD (tolvaptan)</p>
         </div>
       </div>
     </div>
 
     <!-- What this means for PKD -->
-    <div class="mt-10 bg-white rounded-xl border border-gray-200 p-6">
-      <h2 class="text-lg font-semibold text-gray-900 mb-3">What This Means for PKD Patients</h2>
-      <div class="space-y-3 text-sm text-gray-600">
+    <div class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 mb-10 shadow-sm">
+      <h2 class="text-xl font-bold text-gray-900 mb-4">What This Means for PKD Patients</h2>
+      <div class="space-y-4 text-sm text-gray-600">
         <p>
-          Currently, <strong>tolvaptan (Jynarque)</strong> is the only FDA-approved treatment specifically for ADPKD, approved in 2018. It slows kidney growth but has significant side effects (excessive thirst, frequent urination, liver monitoring requirements) and isn't suitable for all patients.
+          Currently, <strong>tolvaptan (Jynarque)</strong> is the only FDA-approved treatment specifically for ADPKD. The drugs on our <a href="/pipeline" class="text-primary-600 hover:text-primary-700 font-medium underline">pipeline page</a> represent the next wave. Based on typical timelines:
         </p>
-        <p>
-          The drugs on our <a href="/pipeline" class="text-primary-600 hover:text-primary-700 font-medium">pipeline page</a> represent the next wave of potential treatments. Based on typical timelines:
-        </p>
-        <ul class="list-disc pl-5 space-y-2">
-          <li><strong>Phase 3 drugs</strong> (Metformin, Dapagliflozin, Farabursen) could potentially reach patients in <strong>3–5 years</strong> if trials succeed.</li>
-          <li><strong>Phase 2 drugs</strong> (ABBV-CLS-628, VX-407, Tirzepatide) are likely <strong>5–8 years</strong> from approval.</li>
-          <li><strong>Phase 1 drugs</strong> (AZD1613, PYC-003) are <strong>8–12 years</strong> from approval — but represent novel mechanisms that could be game-changers.</li>
-        </ul>
-        <p>
-          These timelines can be shortened if drugs receive breakthrough therapy designation or if results are exceptionally strong. Farabursen, for example, showed halted kidney growth in Phase 1b — the kind of result that could accelerate its path.
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-purple-50 rounded-lg p-4 border border-purple-100">
+            <p class="font-bold text-purple-800 mb-1">Phase 3 drugs</p>
+            <p class="text-xs text-gray-600 mb-2">Metformin, Dapagliflozin, Farabursen</p>
+            <p class="text-lg font-bold text-gray-900">3–5 years</p>
+            <p class="text-xs text-gray-500">to potential approval</p>
+          </div>
+          <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
+            <p class="font-bold text-blue-800 mb-1">Phase 2 drugs</p>
+            <p class="text-xs text-gray-600 mb-2">ABBV-CLS-628, VX-407, Tirzepatide</p>
+            <p class="text-lg font-bold text-gray-900">5–8 years</p>
+            <p class="text-xs text-gray-500">to potential approval</p>
+          </div>
+          <div class="bg-teal-50 rounded-lg p-4 border border-teal-100">
+            <p class="font-bold text-teal-800 mb-1">Phase 1 drugs</p>
+            <p class="text-xs text-gray-600 mb-2">AZD1613, PYC-003</p>
+            <p class="text-lg font-bold text-gray-900">8–12 years</p>
+            <p class="text-xs text-gray-500">to potential approval</p>
+          </div>
+        </div>
+        <p class="text-gray-500 text-xs">
+          Timelines can be shortened via Breakthrough Therapy designation or exceptionally strong results.
         </p>
       </div>
     </div>
 
     <!-- CTA -->
-    <div class="mt-8 text-center">
+    <div class="text-center mb-8">
       <a href="/pipeline" class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors shadow-sm">
         View the Drug Pipeline
         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -316,10 +454,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
 
     <!-- Disclaimer -->
-    <div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-4">
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
       <p class="text-xs text-amber-800">
-        <strong>Note:</strong> Success rates and timelines are industry averages based on FDA data and published research. Individual drugs may progress faster or slower. Timelines for PKD-specific drugs may differ from overall averages. This is not medical advice.
+        <strong>Note:</strong> Success rates and timelines are industry averages based on FDA data and published research. Individual drugs may progress faster or slower. This is not medical advice.
       </p>
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  const buttons = document.querySelectorAll('.phase-btn');
+  const details = document.querySelectorAll('.phase-detail');
+  const prompt = document.getElementById('detail-prompt');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const phase = btn.getAttribute('data-phase');
+
+      // Update button active states
+      buttons.forEach(b => b.classList.remove('ring-2', 'ring-offset-2', 'scale-105'));
+      btn.classList.add('ring-2', 'ring-offset-2', 'scale-105');
+
+      // Show/hide panels
+      details.forEach(d => d.classList.add('hidden'));
+      if (prompt) prompt.classList.add('hidden');
+
+      const target = document.getElementById(`detail-${phase}`);
+      if (target) {
+        target.classList.remove('hidden');
+        target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+</script>

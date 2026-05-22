@@ -43,6 +43,20 @@ Before pushing updates, verify:
 - [ ] NCT IDs are valid (format: NCTxxxxxxxx)
 - [ ] No broken internal links
 
+## SEO Requirements
+
+Every page must use `BaseLayout.astro` which provides:
+- Meta description, Open Graph, Twitter Card, canonical URL, JSON-LD, keywords
+- Automatic sitemap inclusion via `@astrojs/sitemap`
+- `robots.txt` at `public/robots.txt` (allow all, reference sitemap)
+
+**Rules:**
+- Every new page needs a unique `title` (≤60 chars) and `description` (≤160 chars) prop
+- Use semantic HTML hierarchy (one h1 per page, logical h2-h6 nesting)
+- Add internal links between related pages where natural
+- Never block crawling (`noindex`, `nofollow`) without explicit approval
+- After adding a new page, verify it appears in `dist/sitemap-0.xml`
+
 ## Key Decisions
 
 - **Data format:** JSON files as single source of truth (not hardcoded in templates)
