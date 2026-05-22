@@ -19,6 +19,10 @@ const sortedDrugs = [...drugs].sort((a, b) => {
       <p class="mt-2 text-gray-600">
         {drugs.length} drugs currently in clinical development for PKD/ADPKD. Data sourced from ClinicalTrials.gov.
       </p>
+      <a href="/phases" class="inline-flex items-center gap-1 mt-2 text-sm text-primary-600 hover:text-primary-700 font-medium">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        What do the trial phases mean?
+      </a>
     </div>
 
     <PipelineTracker drugs={drugs.map(d => ({ name: d.name, phase: d.phase, status: d.status }))} />
