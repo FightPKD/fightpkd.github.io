@@ -1,5 +1,6 @@
 ---
 interface Drug {
+  id: string;
   name: string;
   phase: number;
   status: string;
@@ -107,9 +108,9 @@ const statusIcons: Record<string, string> = {
       const sBar = getStatusBar(drug.status);
       return (
         <div class="grid grid-cols-[180px_1fr_1fr_1fr_130px] gap-0 items-center py-2 px-2 hover:bg-gray-50 rounded-lg transition-colors">
-          <div class="font-medium text-sm text-gray-900 truncate pr-3" title={drug.name}>
+          <a href={`/drugs/${drug.id}`} class="font-medium text-sm text-gray-900 hover:text-primary-600 truncate pr-3 transition-colors" title={drug.name}>
             {drug.name}
-          </div>
+          </a>
 
           {/* Phase 1 */}
           <div class="px-2">
@@ -240,7 +241,7 @@ const statusIcons: Record<string, string> = {
       return (
         <div class="py-2 px-2 rounded-lg hover:bg-gray-50 transition-colors">
           <div class="flex items-center justify-between mb-1.5">
-            <p class="text-sm font-medium text-gray-900 truncate">{drug.name}</p>
+            <a href={`/drugs/${drug.id}`} class="text-sm font-medium text-gray-900 hover:text-primary-600 truncate transition-colors">{drug.name}</a>
             <span class={`shrink-0 ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${getBadge(drug.status)}`}>
               {statusLabels[drug.status] || drug.status}
             </span>

@@ -25,7 +25,7 @@ const sortedDrugs = [...drugs].sort((a, b) => {
       </a>
     </div>
 
-    <PipelineTracker drugs={drugs.map(d => ({ name: d.name, phase: d.phase, status: d.status }))} />
+    <PipelineTracker drugs={drugs.map(d => ({ id: d.id, name: d.name, phase: d.phase, status: d.status }))} />
 
     <div class="mb-6 flex flex-wrap gap-3">
       <div class="flex items-center gap-2 text-sm text-gray-600">
