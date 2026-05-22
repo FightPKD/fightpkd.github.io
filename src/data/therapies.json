@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ketogenic-diet",
+    "name": "Ketogenic Diet",
+    "category": "dietary",
+    "status": "completed",
+    "studyName": "KETO-ADPKD",
+    "institution": "University of Cologne",
+    "resultsSummary": "66 patients randomized for 3 months. Non-significant kidney volume reduction trend (-0.55% vs +0.79% control). Significant liver volume reduction (-4.73%). eGFR improved +5.5% (creatinine) / +13.9% (cystatin-C). 95% found feasible.",
+    "link": "/keto",
+    "publicationDate": "2023-11",
+    "researchers": "Roman-Ulrich Mueller, Thomas Weimbs"
+  },
+  {
+    "id": "ketocitra",
+    "name": "KetoCitra (BHB + Citrate)",
+    "category": "supplement",
+    "status": "observational",
+    "studyName": "Ren-Nu Program",
+    "institution": "Santa Barbara Nutrients",
+    "resultsSummary": "103 patients in 3-month program. eGFR increased 6.3% (P<0.001), BMI improved, pain reduced. Limitation: no control group, company-authored study.",
+    "link": "/keto",
+    "publicationDate": "2026",
+    "researchers": "Thomas Weimbs"
+  },
+  {
+    "id": "water-intake",
+    "name": "High Water Intake",
+    "category": "lifestyle",
+    "status": "completed",
+    "studyName": "PREVENT-ADPKD",
+    "institution": "University of Sydney",
+    "resultsSummary": "184 patients over 3 years. NEGATIVE result: no significant benefit (6.8% vs 7.8% annual kidney growth, P=0.18). Only 52% achieved target urine osmolality.",
+    "link": "",
+    "publicationDate": "2022",
+    "researchers": "Gopala Rangan"
+  },
+  {
+    "id": "time-restricted-eating",
+    "name": "Time-Restricted Eating",
+    "category": "dietary",
+    "status": "completed",
+    "studyName": "12-Month TRE Trial",
+    "institution": "University of Colorado",
+    "resultsSummary": "29 patients, 8-hour eating window vs healthy eating for 12 months. Adherence target not met (60% vs 75% goal). Both groups lost modest weight. Conclusion: weight loss may matter more than eating timing.",
+    "link": "",
+    "publicationDate": "2025",
+    "researchers": "Kristen Nowak"
+  },
+  {
+    "id": "metformin-therapy",
+    "name": "Metformin",
+    "category": "repurposed_drug",
+    "status": "in_progress",
+    "studyName": "IMPEDE-PKD (Phase 3)",
+    "institution": "University of Queensland",
+    "resultsSummary": "Phase 2 (TAME-PKD) showed safety and encouraging but non-significant eGFR preservation. Phase 3 now recruiting 1,174 patients — largest PKD trial to date.",
+    "link": "",
+    "publicationDate": "",
+    "researchers": "Kenneth Hallows"
+  },
+  {
+    "id": "mediterranean-diet",
+    "name": "Mediterranean Diet",
+    "category": "dietary",
+    "status": "observational",
+    "studyName": "Cross-sectional studies",
+    "institution": "Multiple",
+    "resultsSummary": "Higher adherence associated with lower oxidative stress and reduced endothelial dysfunction in ADPKD patients. No interventional trial yet.",
+    "link": "",
+    "publicationDate": "2024",
+    "researchers": "Multiple groups"
+  }
+]

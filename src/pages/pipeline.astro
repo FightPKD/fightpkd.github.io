@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DrugCard from '../components/DrugCard.astro';
+import PipelineTracker from '../components/PipelineTracker.astro';
+import drugs from '../data/drugs.json';
+
+const sortedDrugs = [...drugs].sort((a, b) => {
+  const statusOrder: Record<string, number> = { recruiting: 0, not_yet_recruiting: 1, enrolling_by_invitation: 2, active_not_recruiting: 3, completed: 4 };
+  const phaseSort = b.phase - a.phase;
+  if (phaseSort !== 0) return phaseSort;
+  return (statusOrder[a.status] ?? 5) - (statusOrder[b.status] ?? 5);
+});
+---
+
+<BaseLayout title="Drug Pipeline" description="Track all drugs currently in clinical trials for Polycystic Kidney Disease (PKD/ADPKD).">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900">Drug Pipeline</h1>
+      <p class="mt-2 text-gray-600">
+        {drugs.length} drugs currently in clinical development for PKD/ADPKD. Data sourced from ClinicalTrials.gov.
+      </p>
+    </div>
+
+    <PipelineTracker drugs={drugs.map(d => ({ name: d.name, phase: d.phase, status: d.status }))} />
+
+    <div class="mb-6 flex flex-wrap gap-3">
+      <div class="flex items-center gap-2 text-sm text-gray-600">
+        <span class="font-medium">Legend:</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+        <span class="text-xs text-gray-600">Recruiting</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+        <span class="text-xs text-gray-600">Not Yet Recruiting</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+        <span class="text-xs text-gray-600">Active</span>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+        <span class="text-xs text-gray-600">Completed</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {sortedDrugs.map((drug) => (
+        <DrugCard
+          name={drug.name}
+          company={drug.company}
+          companyLocation={drug.companyLocation}
+          phase={drug.phase}
+          status={drug.status}
+          trialName={drug.trialName}
+          startDate={drug.startDate}
+          mechanism={drug.mechanism}
+          participants={drug.participants}
+          nctId={drug.nctId}
+          notes={drug.notes}
+        />
+      ))}
+    </div>
+
+    <div class="mt-12 bg-gray-50 rounded-xl p-6 border border-gray-200">
+      <p class="text-sm text-gray-500 text-center">
+        Last updated: May 2026. Information sourced from ClinicalTrials.gov and published research.
+        <br />
+        Trial status may change — always verify with the trial sponsor for the most current information.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

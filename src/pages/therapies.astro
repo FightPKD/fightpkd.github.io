@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TherapyCard from '../components/TherapyCard.astro';
+import therapies from '../data/therapies.json';
+
+const categories = [
+  { key: 'dietary', label: 'Dietary Interventions', description: 'Studies on diet modifications for PKD' },
+  { key: 'supplement', label: 'Supplements', description: 'Ketone and nutritional supplement research' },
+  { key: 'lifestyle', label: 'Lifestyle', description: 'Non-dietary lifestyle interventions' },
+  { key: 'repurposed_drug', label: 'Repurposed Drugs', description: 'Existing drugs being studied for PKD' },
+];
+
+const therapiesByCategory = categories.map(cat => ({
+  ...cat,
+  items: therapies.filter(t => t.category === cat.key)
+})).filter(cat => cat.items.length > 0);
+---
+
+<BaseLayout title="Therapeutic Research" description="Evidence-based therapeutic approaches and lifestyle interventions being studied for PKD.">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900">Therapeutic Research</h1>
+      <p class="mt-2 text-gray-600">
+        Beyond the drug pipeline — evidence-based dietary, supplement, and lifestyle interventions being studied for PKD/ADPKD.
+      </p>
+    </div>
+
+    {therapiesByCategory.map((category) => (
+      <section class="mb-12">
+        <div class="mb-4">
+          <h2 class="text-xl font-semibold text-gray-900">{category.label}</h2>
+          <p class="text-sm text-gray-500">{category.description}</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {category.items.map((therapy) => (
+            <TherapyCard
+              name={therapy.name}
+              category={therapy.category}
+              status={therapy.status}
+              studyName={therapy.studyName}
+              institution={therapy.institution}
+              resultsSummary={therapy.resultsSummary}
+              link={therapy.link}
+              publicationDate={therapy.publicationDate}
+              researchers={therapy.researchers}
+            />
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <div class="mt-8 bg-blue-50 rounded-xl p-6 border border-blue-200">
+      <div class="flex items-start gap-3">
+        <svg class="w-5 h-5 text-blue-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <div>
+          <h3 class="font-medium text-blue-900">About this research</h3>
+          <p class="text-sm text-blue-800 mt-1">
+            Therapeutic approaches listed here are based on published clinical trials and peer-reviewed research.
+            "Completed" means results are available; "In Progress" means the trial is still ongoing.
+            This is not medical advice — discuss any interventions with your healthcare provider.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

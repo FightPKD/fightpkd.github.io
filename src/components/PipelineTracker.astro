@@ -1,0 +1,52 @@
+---
+interface Drug {
+  name: string;
+  phase: number;
+  status: string;
+}
+
+interface Props {
+  drugs: Drug[];
+}
+
+const { drugs } = Astro.props;
+
+const phases = [
+  { num: 1, label: 'Phase 1', color: 'cyan' },
+  { num: 2, label: 'Phase 2', color: 'blue' },
+  { num: 3, label: 'Phase 3', color: 'indigo' },
+];
+
+const drugsByPhase = phases.map(p => ({
+  ...p,
+  drugs: drugs.filter(d => d.phase === p.num)
+}));
+---
+
+<div class="bg-white rounded-xl border border-gray-200 p-6 mb-8">
+  <h2 class="text-lg font-semibold text-gray-900 mb-6">Pipeline Overview</h2>
+
+  <div class="relative">
+    <div class="absolute top-8 left-0 right-0 h-1 bg-gray-200 rounded-full"></div>
+
+    <div class="grid grid-cols-3 gap-4 relative">
+      {drugsByPhase.map((phase, i) => (
+        <div class="text-center">
+          <div class={`relative inline-flex items-center justify-center w-16 h-16 rounded-full border-4 bg-white
+            ${phase.color === 'cyan' ? 'border-cyan-400' : ''}
+            ${phase.color === 'blue' ? 'border-blue-400' : ''}
+            ${phase.color === 'indigo' ? 'border-indigo-400' : ''}
+          `}>
+            <span class="font-bold text-gray-700">{phase.drugs.length}</span>
+          </div>
+          <p class="mt-2 font-medium text-sm text-gray-700">{phase.label}</p>
+          <div class="mt-3 space-y-1">
+            {phase.drugs.map(drug => (
+              <p class="text-xs text-gray-500 truncate" title={drug.name}>{drug.name}</p>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,367 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Keto & PKD Research" description="Comprehensive overview of ketogenic diet and KetoCitra research for Polycystic Kidney Disease.">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="lg:grid lg:grid-cols-[1fr_250px] lg:gap-12">
+      <article class="prose-content">
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">Ketogenic Interventions for PKD</h1>
+        <p class="text-gray-600 mb-8 text-lg">
+          A comprehensive overview of the research on ketogenic diet, ketone supplements, and metabolic interventions for Polycystic Kidney Disease.
+        </p>
+
+        <!-- Summary Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 not-prose">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+            <p class="text-sm font-medium text-emerald-800">KETO-ADPKD Trial</p>
+            <p class="text-xs text-emerald-600 mt-1">Completed 2023 — First RCT of keto diet in ADPKD</p>
+          </div>
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <p class="text-sm font-medium text-blue-800">KetoCitra / Ren-Nu</p>
+            <p class="text-xs text-blue-600 mt-1">Observational data — 103 patients, eGFR +6.3%</p>
+          </div>
+          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+            <p class="text-sm font-medium text-purple-800">Preclinical Evidence</p>
+            <p class="text-xs text-purple-600 mt-1">BHB + Citrate synergy demonstrated in animal models</p>
+          </div>
+        </div>
+
+        <!-- Scientific Rationale -->
+        <section id="rationale" class="mb-12">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">Scientific Rationale</h2>
+          <p class="text-gray-700 mb-4">
+            PKD cysts rely heavily on glucose for growth through a metabolic shift similar to the Warburg effect in cancer cells.
+            A ketogenic state may counteract cyst growth through multiple mechanisms:
+          </p>
+          <ul class="space-y-2 text-gray-700 mb-4">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span><strong>Beta-hydroxybutyrate (BHB)</strong> — the primary ketone body — may directly inhibit cyst cell proliferation through signaling pathways independent of its role as fuel</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span><strong>AMPK activation</strong> — ketosis activates AMP-activated protein kinase, which inhibits mTOR signaling (a key driver of cyst growth)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span><strong>Glucose deprivation</strong> — reducing glucose availability may "starve" glucose-dependent cyst cells</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span><strong>CFTR inhibition</strong> — AMPK activation inhibits chloride secretion through CFTR channels, reducing cyst fluid accumulation</span>
+            </li>
+          </ul>
+          <p class="text-gray-700">
+            Initial preclinical work by Thomas Weimbs' lab at UCSB demonstrated that ketosis slowed cyst growth in animal models, leading to the first human trials.
+          </p>
+        </section>
+
+        <!-- KETO-ADPKD Trial -->
+        <section id="keto-adpkd" class="mb-12">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">KETO-ADPKD Trial</h2>
+          <div class="bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+              <div>
+                <p class="text-gray-500">Status</p>
+                <p class="font-medium text-gray-900">Completed</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Patients</p>
+                <p class="font-medium text-gray-900">66</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Duration</p>
+                <p class="font-medium text-gray-900">3 months</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Published</p>
+                <p class="font-medium text-gray-900">Nov 2023</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-gray-700 mb-4">
+            The KETO-ADPKD trial (NCT04680780) was the first randomized controlled trial of ketogenic diet in ADPKD patients, led by Roman-Ulrich Mueller at the University of Cologne in collaboration with Thomas Weimbs. Published in <em>Cell Reports Medicine</em>.
+          </p>
+
+          <h3 class="text-lg font-medium text-gray-900 mt-6 mb-3">Design</h3>
+          <p class="text-gray-700 mb-4">
+            66 ADPKD patients were randomized to one of three arms: ketogenic diet (KD), water fasting (WF, 3 days/month), or control (standard diet) for 3 months.
+          </p>
+
+          <h3 class="text-lg font-medium text-gray-900 mt-6 mb-3">Key Results</h3>
+          <div class="space-y-3 mb-4">
+            <div class="flex items-start gap-3 bg-emerald-50 rounded-lg p-3 border border-emerald-100">
+              <span class="text-emerald-600 font-bold text-sm mt-0.5">+</span>
+              <p class="text-sm text-gray-700"><strong>Feasibility:</strong> 95% of participants found the ketogenic diet feasible; significant ketogenesis was achieved</p>
+            </div>
+            <div class="flex items-start gap-3 bg-emerald-50 rounded-lg p-3 border border-emerald-100">
+              <span class="text-emerald-600 font-bold text-sm mt-0.5">+</span>
+              <p class="text-sm text-gray-700"><strong>eGFR improvement:</strong> KD group showed +5.5% (creatinine-based) and +13.9% (cystatin-C-based) eGFR improvement while controls declined</p>
+            </div>
+            <div class="flex items-start gap-3 bg-emerald-50 rounded-lg p-3 border border-emerald-100">
+              <span class="text-emerald-600 font-bold text-sm mt-0.5">+</span>
+              <p class="text-sm text-gray-700"><strong>Liver volume:</strong> Significant reduction in the KD group (-4.73%) vs. control (+2.04%)</p>
+            </div>
+            <div class="flex items-start gap-3 bg-amber-50 rounded-lg p-3 border border-amber-100">
+              <span class="text-amber-600 font-bold text-sm mt-0.5">~</span>
+              <p class="text-sm text-gray-700"><strong>Kidney volume:</strong> Trend in right direction (KD -0.55% vs. control +0.79%) but <strong>NOT statistically significant</strong> — likely underpowered and too short</p>
+            </div>
+            <div class="flex items-start gap-3 bg-emerald-50 rounded-lg p-3 border border-emerald-100">
+              <span class="text-emerald-600 font-bold text-sm mt-0.5">+</span>
+              <p class="text-sm text-gray-700"><strong>Body composition:</strong> -7.2% body weight, -20.5% body fat in KD group</p>
+            </div>
+            <div class="flex items-start gap-3 bg-emerald-50 rounded-lg p-3 border border-emerald-100">
+              <span class="text-emerald-600 font-bold text-sm mt-0.5">+</span>
+              <p class="text-sm text-gray-700"><strong>Safety:</strong> Only mild, transient "keto-flu" symptoms reported</p>
+            </div>
+          </div>
+
+          <h3 class="text-lg font-medium text-gray-900 mt-6 mb-3">Limitations</h3>
+          <ul class="space-y-1 text-sm text-gray-600">
+            <li>- Short duration (3 months) — insufficient to detect kidney volume changes</li>
+            <li>- Small sample size (66 patients) — underpowered for primary endpoint</li>
+            <li>- Open-label design — participants knew their diet assignment</li>
+            <li>- eGFR improvements may reflect hemodynamic changes, not structural benefit</li>
+          </ul>
+        </section>
+
+        <!-- RESET-PKD -->
+        <section id="reset-pkd" class="mb-12">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">RESET-PKD Pilot</h2>
+          <p class="text-gray-700 mb-4">
+            A precursor pilot study with 10 ADPKD patients who underwent either a 14-day ketogenic diet or 3-day water fast. Established feasibility and safety.
+          </p>
+          <ul class="space-y-1 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span>Significant liver volume reduction (-7.7%)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span>Kidney volume change not significant in this short period</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span>Confirmed both interventions were safe and feasible in ADPKD patients</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- KetoCitra -->
+        <section id="ketocitra" class="mb-12">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">KetoCitra & Ketone Supplements</h2>
+
+          <h3 class="text-lg font-medium text-gray-900 mt-4 mb-3">What is KetoCitra?</h3>
+          <p class="text-gray-700 mb-4">
+            KetoCitra is classified as a "medical food" (not a drug or supplement) produced by Santa Barbara Nutrients, Inc.,
+            co-founded by Thomas Weimbs. It requires medical supervision and contains:
+          </p>
+          <ul class="space-y-1 text-sm text-gray-700 mb-4">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span><strong>BHB (beta-hydroxybutyrate)</strong> — to promote therapeutic ketosis</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span><strong>Citrate</strong> — to prevent microcrystal formation that may trigger new cysts</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span><strong>Electrolytes (K, Mg, Ca)</strong> — alkaline base load, sodium-free</span>
+            </li>
+          </ul>
+
+          <h3 class="text-lg font-medium text-gray-900 mt-6 mb-3">Ren-Nu Program (Real-World Data, 2026)</h3>
+          <div class="bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+              <div>
+                <p class="text-gray-500">Patients</p>
+                <p class="font-medium text-gray-900">103</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Duration</p>
+                <p class="font-medium text-gray-900">3 months</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Program</p>
+                <p class="font-medium text-gray-900">KetoCitra + keto diet + dietitian</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Control group</p>
+                <p class="font-medium text-gray-900 text-amber-700">None</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-3">Results:</p>
+          <ul class="space-y-1 text-sm text-gray-700 mb-4">
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span>eGFR increased 6.3% (P&lt;0.001)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span>BMI improved</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 shrink-0"></span>
+              <span>Pain reduced, fewer anti-hypertensives needed</span>
+            </li>
+          </ul>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
+            <p class="text-sm text-amber-800">
+              <strong>Important:</strong> This study had no control group and was authored entirely by company employees.
+              These results should be interpreted with caution pending independent replication.
+            </p>
+          </div>
+        </section>
+
+        <!-- Preclinical Evidence -->
+        <section id="preclinical" class="mb-12">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">Key Preclinical Evidence</h2>
+
+          <div class="space-y-6">
+            <div class="border-l-4 border-primary-400 pl-4">
+              <h3 class="font-medium text-gray-900">BHB alone recapitulates ketogenic therapy</h3>
+              <p class="text-sm text-gray-500 mb-1">iScience, 2024</p>
+              <p class="text-sm text-gray-700">Both D-BHB and L-BHB stereoisomers reduced cyst growth in PKD animal models, implying a signaling mechanism rather than purely metabolic effect.</p>
+            </div>
+
+            <div class="border-l-4 border-primary-400 pl-4">
+              <h3 class="font-medium text-gray-900">BHB + Citrate synergistic effect</h3>
+              <p class="text-sm text-gray-500 mb-1">American Journal of Physiology, 2024</p>
+              <p class="text-sm text-gray-700">Combination of BHB and citrate at lower doses outperformed either compound alone at higher doses in rat PKD models, suggesting synergistic benefit.</p>
+            </div>
+
+            <div class="border-l-4 border-primary-400 pl-4">
+              <h3 class="font-medium text-gray-900">DIPAK Consortium observational data</h3>
+              <p class="text-sm text-gray-500 mb-1">Nephrology Dialysis Transplantation, 2024</p>
+              <p class="text-sm text-gray-700">In 521 ADPKD patients, higher endogenous BHB levels predicted 0.33 mL/min/1.73m² better annual eGFR slope (P=0.008). Independent support from the Netherlands.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Time-Restricted Eating -->
+        <section id="tre" class="mb-12">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">Time-Restricted Eating</h2>
+          <div class="bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+              <div>
+                <p class="text-gray-500">Patients</p>
+                <p class="font-medium text-gray-900">29</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Duration</p>
+                <p class="font-medium text-gray-900">12 months</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Institution</p>
+                <p class="font-medium text-gray-900">Univ. of Colorado</p>
+              </div>
+              <div>
+                <p class="text-gray-500">Published</p>
+                <p class="font-medium text-gray-900">2025</p>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-3">
+            29 patients were randomized to an 8-hour eating window (time-restricted eating) vs. healthy eating for 12 months, led by Kristen Nowak.
+          </p>
+          <p class="text-gray-700 mb-3">
+            <strong>Key finding:</strong> Adherence target was not met (60% vs. 75% goal). Both groups lost modest weight.
+            The study concluded that <strong>weight and adiposity loss may matter more than eating timing</strong> per se.
+          </p>
+        </section>
+
+        <!-- Key Researchers -->
+        <section id="researchers" class="mb-12">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">Key Researchers</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white border border-gray-200 rounded-lg p-4">
+              <h3 class="font-medium text-gray-900">Thomas Weimbs, PhD</h3>
+              <p class="text-sm text-gray-500">UC Santa Barbara</p>
+              <p class="text-xs text-gray-600 mt-2">Foundational ketosis-PKD research. BHB mechanisms. Co-founder of Santa Barbara Nutrients (KetoCitra).</p>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-lg p-4">
+              <h3 class="font-medium text-gray-900">Roman-Ulrich Mueller, MD</h3>
+              <p class="text-sm text-gray-500">University of Cologne</p>
+              <p class="text-xs text-gray-600 mt-2">Led KETO-ADPKD and RESET-PKD clinical trials. First RCTs of ketogenic diet in ADPKD.</p>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-lg p-4">
+              <h3 class="font-medium text-gray-900">Kristen Nowak, PhD</h3>
+              <p class="text-sm text-gray-500">University of Colorado</p>
+              <p class="text-xs text-gray-600 mt-2">Time-restricted eating trial. Dietary interventions and metabolic health in ADPKD.</p>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-lg p-4">
+              <h3 class="font-medium text-gray-900">Ron Gansevoort, MD, PhD</h3>
+              <p class="text-sm text-gray-500">Univ. of Groningen (DIPAK Consortium)</p>
+              <p class="text-xs text-gray-600 mt-2">Independent observational study linking endogenous BHB levels to better eGFR outcomes in 521 ADPKD patients.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Important Caveats -->
+        <section id="caveats" class="mb-12">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">Important Caveats</h2>
+          <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+            <ul class="space-y-3 text-sm text-red-900">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+                <span><strong>Conflict of interest:</strong> The majority of ketogenic/BHB/KetoCitra research originates from or is connected to the Weimbs lab / Santa Barbara Nutrients (the company selling KetoCitra)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+                <span><strong>No long-term RCT data:</strong> The longest ketogenic intervention trial is 12 months (Colorado TRE trial), which had adherence problems</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+                <span><strong>Kidney volume reduction not proven:</strong> The 3-month KETO-ADPKD trial showed a non-significant trend only</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+                <span><strong>eGFR confounders:</strong> Short-term eGFR improvements could be explained by weight loss, hemodynamic changes, or measurement artifacts</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+                <span><strong>Independent replication needed:</strong> The DIPAK observational study provides some support, but most interventional data comes from one research network</span>
+              </li>
+            </ul>
+          </div>
+          <p class="text-sm text-gray-500 mt-4">
+            The field is rapidly growing (311+ publications on dietary interventions for PKD), and larger, longer trials are expected in the coming years.
+            Always discuss dietary changes with your nephrologist.
+          </p>
+        </section>
+      </article>
+
+      <!-- Sidebar TOC -->
+      <aside class="hidden lg:block">
+        <nav class="sticky top-24">
+          <h2 class="text-sm font-semibold text-gray-900 mb-3">On this page</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#rationale" class="text-gray-600 hover:text-primary-600 transition-colors">Scientific Rationale</a></li>
+            <li><a href="#keto-adpkd" class="text-gray-600 hover:text-primary-600 transition-colors">KETO-ADPKD Trial</a></li>
+            <li><a href="#reset-pkd" class="text-gray-600 hover:text-primary-600 transition-colors">RESET-PKD Pilot</a></li>
+            <li><a href="#ketocitra" class="text-gray-600 hover:text-primary-600 transition-colors">KetoCitra & Supplements</a></li>
+            <li><a href="#preclinical" class="text-gray-600 hover:text-primary-600 transition-colors">Preclinical Evidence</a></li>
+            <li><a href="#tre" class="text-gray-600 hover:text-primary-600 transition-colors">Time-Restricted Eating</a></li>
+            <li><a href="#researchers" class="text-gray-600 hover:text-primary-600 transition-colors">Key Researchers</a></li>
+            <li><a href="#caveats" class="text-gray-600 hover:text-primary-600 transition-colors">Important Caveats</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
