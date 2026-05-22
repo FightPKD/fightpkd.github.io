@@ -11,42 +11,226 @@ interface Props {
 
 const { drugs } = Astro.props;
 
-const phases = [
-  { num: 1, label: 'Phase 1', color: 'cyan' },
-  { num: 2, label: 'Phase 2', color: 'blue' },
-  { num: 3, label: 'Phase 3', color: 'indigo' },
-];
+const sortedDrugs = [...drugs].sort((a, b) => {
+  if (b.phase !== a.phase) return b.phase - a.phase;
+  const statusOrder: Record<string, number> = { recruiting: 0, not_yet_recruiting: 1, enrolling_by_invitation: 2, active_not_recruiting: 3, completed: 4 };
+  return (statusOrder[a.status] ?? 5) - (statusOrder[b.status] ?? 5);
+});
 
-const drugsByPhase = phases.map(p => ({
-  ...p,
-  drugs: drugs.filter(d => d.phase === p.num)
-}));
+function getPhaseState(drugPhase: number, drugStatus: string, targetPhase: number) {
+  if (targetPhase < drugPhase) return 'completed';
+  if (targetPhase === drugPhase) return 'current';
+  return 'upcoming';
+}
+
+function getStatusColor(status: string) {
+  switch (status) {
+    case 'recruiting': return 'emerald';
+    case 'not_yet_recruiting': return 'amber';
+    case 'active_not_recruiting': return 'blue';
+    case 'enrolling_by_invitation': return 'purple';
+    case 'completed': return 'gray';
+    default: return 'gray';
+  }
+}
+
+function getStatusLabel(status: string) {
+  switch (status) {
+    case 'recruiting': return 'Recruiting';
+    case 'not_yet_recruiting': return 'Not Yet Recruiting';
+    case 'active_not_recruiting': return 'Active';
+    case 'enrolling_by_invitation': return 'By Invitation';
+    case 'completed': return 'Completed';
+    default: return status;
+  }
+}
 ---
 
-<div class="bg-white rounded-xl border border-gray-200 p-6 mb-8">
-  <h2 class="text-lg font-semibold text-gray-900 mb-6">Pipeline Overview</h2>
+<div class="bg-white rounded-xl border border-gray-200 p-6 mb-8 overflow-x-auto">
+  <h2 class="text-lg font-semibold text-gray-900 mb-2">Pipeline Overview</h2>
+  <p class="text-sm text-gray-500 mb-6">Each row shows a drug's progression through clinical trial phases</p>
 
-  <div class="relative">
-    <div class="absolute top-8 left-0 right-0 h-1 bg-gray-200 rounded-full"></div>
+  <div class="min-w-[600px]">
+    <!-- Column headers -->
+    <div class="grid grid-cols-[200px_1fr_1fr_1fr_140px] gap-0 mb-2 px-2">
+      <div class="text-xs font-medium text-gray-500 uppercase tracking-wider">Drug</div>
+      <div class="text-xs font-medium text-cyan-700 uppercase tracking-wider text-center">Phase 1</div>
+      <div class="text-xs font-medium text-blue-700 uppercase tracking-wider text-center">Phase 2</div>
+      <div class="text-xs font-medium text-indigo-700 uppercase tracking-wider text-center">Phase 3</div>
+      <div class="text-xs font-medium text-gray-500 uppercase tracking-wider text-right">Status</div>
+    </div>
 
-    <div class="grid grid-cols-3 gap-4 relative">
-      {drugsByPhase.map((phase, i) => (
-        <div class="text-center">
-          <div class={`relative inline-flex items-center justify-center w-16 h-16 rounded-full border-4 bg-white
-            ${phase.color === 'cyan' ? 'border-cyan-400' : ''}
-            ${phase.color === 'blue' ? 'border-blue-400' : ''}
-            ${phase.color === 'indigo' ? 'border-indigo-400' : ''}
-          `}>
-            <span class="font-bold text-gray-700">{phase.drugs.length}</span>
+    <div class="border-t border-gray-100"></div>
+
+    <!-- Drug rows -->
+    {sortedDrugs.map((drug) => {
+      const color = getStatusColor(drug.status);
+      return (
+        <div class="grid grid-cols-[200px_1fr_1fr_1fr_140px] gap-0 items-center py-2.5 px-2 hover:bg-gray-50 rounded-lg transition-colors group">
+          <div class="font-medium text-sm text-gray-900 truncate pr-4" title={drug.name}>
+            {drug.name}
           </div>
-          <p class="mt-2 font-medium text-sm text-gray-700">{phase.label}</p>
-          <div class="mt-3 space-y-1">
-            {phase.drugs.map(drug => (
-              <p class="text-xs text-gray-500 truncate" title={drug.name}>{drug.name}</p>
-            ))}
+
+          <!-- Phase 1 -->
+          <div class="flex items-center justify-center px-1">
+            <div class="relative w-full h-2 flex items-center">
+              {getPhaseState(drug.phase, drug.status, 1) === 'completed' && (
+                <div class="w-full h-1.5 bg-gray-300 rounded-full relative">
+                  <div class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-gray-400 rounded-full border-2 border-white shadow-sm"></div>
+                  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-gray-400 rounded-full border-2 border-white shadow-sm"></div>
+                </div>
+              )}
+              {getPhaseState(drug.phase, drug.status, 1) === 'current' && (
+                <div class={`w-full h-2 rounded-full relative
+                  ${color === 'emerald' ? 'bg-emerald-200' : ''}
+                  ${color === 'amber' ? 'bg-amber-200' : ''}
+                  ${color === 'blue' ? 'bg-blue-200' : ''}
+                  ${color === 'purple' ? 'bg-purple-200' : ''}
+                  ${color === 'gray' ? 'bg-gray-200' : ''}
+                `}>
+                  <div class={`absolute inset-y-0 left-0 rounded-full animate-pulse
+                    ${color === 'emerald' ? 'bg-emerald-500' : ''}
+                    ${color === 'amber' ? 'bg-amber-500' : ''}
+                    ${color === 'blue' ? 'bg-blue-500' : ''}
+                    ${color === 'purple' ? 'bg-purple-500' : ''}
+                    ${color === 'gray' ? 'bg-gray-400' : ''}
+                  `} style="width: 60%"></div>
+                  <div class={`absolute left-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-white shadow-sm
+                    ${color === 'emerald' ? 'bg-emerald-500' : ''}
+                    ${color === 'amber' ? 'bg-amber-500' : ''}
+                    ${color === 'blue' ? 'bg-blue-500' : ''}
+                    ${color === 'purple' ? 'bg-purple-500' : ''}
+                    ${color === 'gray' ? 'bg-gray-400' : ''}
+                  `}></div>
+                </div>
+              )}
+              {getPhaseState(drug.phase, drug.status, 1) === 'upcoming' && (
+                <div class="w-full h-1 bg-gray-100 rounded-full relative">
+                  <div class="absolute left-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-white border-2 border-gray-300 rounded-full"></div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="flex items-center justify-center px-1">
+            <div class="relative w-full h-2 flex items-center">
+              {getPhaseState(drug.phase, drug.status, 2) === 'completed' && (
+                <div class="w-full h-1.5 bg-gray-300 rounded-full relative">
+                  <div class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-gray-400 rounded-full border-2 border-white shadow-sm"></div>
+                  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-gray-400 rounded-full border-2 border-white shadow-sm"></div>
+                </div>
+              )}
+              {getPhaseState(drug.phase, drug.status, 2) === 'current' && (
+                <div class={`w-full h-2 rounded-full relative
+                  ${color === 'emerald' ? 'bg-emerald-200' : ''}
+                  ${color === 'amber' ? 'bg-amber-200' : ''}
+                  ${color === 'blue' ? 'bg-blue-200' : ''}
+                  ${color === 'purple' ? 'bg-purple-200' : ''}
+                  ${color === 'gray' ? 'bg-gray-200' : ''}
+                `}>
+                  <div class={`absolute inset-y-0 left-0 rounded-full
+                    ${drug.status === 'recruiting' ? 'animate-pulse' : ''}
+                    ${color === 'emerald' ? 'bg-emerald-500' : ''}
+                    ${color === 'amber' ? 'bg-amber-500' : ''}
+                    ${color === 'blue' ? 'bg-blue-500' : ''}
+                    ${color === 'purple' ? 'bg-purple-500' : ''}
+                    ${color === 'gray' ? 'bg-gray-400' : ''}
+                  `} style="width: 60%"></div>
+                  <div class={`absolute left-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-white shadow-sm
+                    ${color === 'emerald' ? 'bg-emerald-500' : ''}
+                    ${color === 'amber' ? 'bg-amber-500' : ''}
+                    ${color === 'blue' ? 'bg-blue-500' : ''}
+                    ${color === 'purple' ? 'bg-purple-500' : ''}
+                    ${color === 'gray' ? 'bg-gray-400' : ''}
+                  `}></div>
+                </div>
+              )}
+              {getPhaseState(drug.phase, drug.status, 2) === 'upcoming' && (
+                <div class="w-full h-1 bg-gray-100 rounded-full relative">
+                  <div class="absolute left-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-white border-2 border-gray-300 rounded-full"></div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div class="flex items-center justify-center px-1">
+            <div class="relative w-full h-2 flex items-center">
+              {getPhaseState(drug.phase, drug.status, 3) === 'completed' && (
+                <div class="w-full h-1.5 bg-gray-300 rounded-full relative">
+                  <div class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-gray-400 rounded-full border-2 border-white shadow-sm"></div>
+                  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-gray-400 rounded-full border-2 border-white shadow-sm"></div>
+                </div>
+              )}
+              {getPhaseState(drug.phase, drug.status, 3) === 'current' && (
+                <div class={`w-full h-2 rounded-full relative
+                  ${color === 'emerald' ? 'bg-emerald-200' : ''}
+                  ${color === 'amber' ? 'bg-amber-200' : ''}
+                  ${color === 'blue' ? 'bg-blue-200' : ''}
+                  ${color === 'purple' ? 'bg-purple-200' : ''}
+                  ${color === 'gray' ? 'bg-gray-200' : ''}
+                `}>
+                  <div class={`absolute inset-y-0 left-0 rounded-full
+                    ${drug.status === 'recruiting' ? 'animate-pulse' : ''}
+                    ${color === 'emerald' ? 'bg-emerald-500' : ''}
+                    ${color === 'amber' ? 'bg-amber-500' : ''}
+                    ${color === 'blue' ? 'bg-blue-500' : ''}
+                    ${color === 'purple' ? 'bg-purple-500' : ''}
+                    ${color === 'gray' ? 'bg-gray-400' : ''}
+                  `} style="width: 60%"></div>
+                  <div class={`absolute left-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full border-2 border-white shadow-sm
+                    ${color === 'emerald' ? 'bg-emerald-500' : ''}
+                    ${color === 'amber' ? 'bg-amber-500' : ''}
+                    ${color === 'blue' ? 'bg-blue-500' : ''}
+                    ${color === 'purple' ? 'bg-purple-500' : ''}
+                    ${color === 'gray' ? 'bg-gray-400' : ''}
+                  `}></div>
+                </div>
+              )}
+              {getPhaseState(drug.phase, drug.status, 3) === 'upcoming' && (
+                <div class="w-full h-1 bg-gray-100 rounded-full relative">
+                  <div class="absolute left-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-white border-2 border-gray-300 rounded-full"></div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <!-- Status badge -->
+          <div class="flex justify-end">
+            <span class={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium
+              ${color === 'emerald' ? 'bg-emerald-100 text-emerald-800' : ''}
+              ${color === 'amber' ? 'bg-amber-100 text-amber-800' : ''}
+              ${color === 'blue' ? 'bg-blue-100 text-blue-800' : ''}
+              ${color === 'purple' ? 'bg-purple-100 text-purple-800' : ''}
+              ${color === 'gray' ? 'bg-gray-100 text-gray-700' : ''}
+            `}>
+              {drug.status === 'recruiting' && <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1 animate-pulse"></span>}
+              {getStatusLabel(drug.status)}
+            </span>
           </div>
         </div>
-      ))}
+      );
+    })}
+  </div>
+
+  <!-- Legend -->
+  <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap items-center gap-4 text-xs text-gray-500">
+    <div class="flex items-center gap-1.5">
+      <div class="w-6 h-2 bg-emerald-500 rounded-full"></div>
+      <span>Active (recruiting)</span>
+    </div>
+    <div class="flex items-center gap-1.5">
+      <div class="w-6 h-2 bg-amber-500 rounded-full"></div>
+      <span>Not yet recruiting</span>
+    </div>
+    <div class="flex items-center gap-1.5">
+      <div class="w-6 h-1.5 bg-gray-300 rounded-full"></div>
+      <span>Completed phase</span>
+    </div>
+    <div class="flex items-center gap-1.5">
+      <div class="w-6 h-1 bg-gray-100 rounded-full"></div>
+      <span>Upcoming</span>
     </div>
   </div>
 </div>
