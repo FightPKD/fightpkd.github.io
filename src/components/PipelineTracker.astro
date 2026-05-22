@@ -227,6 +227,13 @@ const statusIcons: Record<string, string> = {
 
   <!-- Mobile: compact vertical list -->
   <div class="md:hidden space-y-3">
+    <!-- Mobile phase labels -->
+    <div class="flex items-center gap-0.5 px-2 mb-1">
+      <div class="flex-1 text-center text-[10px] font-semibold text-gray-500 uppercase tracking-wider">Phase 1</div>
+      <div class="flex-1 text-center text-[10px] font-semibold text-gray-500 uppercase tracking-wider">Phase 2</div>
+      <div class="flex-1 text-center text-[10px] font-semibold text-gray-500 uppercase tracking-wider">Phase 3</div>
+    </div>
+
     {sortedDrugs.map((drug) => {
       const fillWidth = statusFillPercent[drug.status] || '50%';
       const sBar = getStatusBar(drug.status);
