@@ -238,5 +238,20 @@
     "participants": 24,
     "nctId": "NCT07161037",
     "notes": "Precision medicine approach analogous to Vertex's CFTR modulators for cystic fibrosis. Phase 1 (159 participants) fully completed."
+  },
+  {
+    "id": "tolvaptan",
+    "name": "Tolvaptan (Jynarque)",
+    "company": "Otsuka Pharmaceutical",
+    "companyLocation": "Tokyo, Japan",
+    "phase": 4,
+    "status": "approved",
+    "trialName": "TEMPO 3:4 / REPRISE",
+    "startDate": "2007",
+    "estimatedCompletion": "",
+    "mechanism": "Vasopressin V2 receptor antagonist — blocks cAMP-driven cyst fluid secretion and cell proliferation",
+    "participants": 2803,
+    "nctId": "NCT00428948",
+    "notes": "FDA approved April 2018 for ADPKD. The only drug specifically approved for PKD. Requires liver monitoring (REMS program). Causes significant polyuria (4–8L/day urine)."
   }
 ]

@@ -24,6 +24,7 @@ const statusColors: Record<string, { badge: string }> = {
   active_not_recruiting: { badge: 'bg-sky-100 text-sky-800' },
   enrolling_by_invitation: { badge: 'bg-violet-100 text-violet-800' },
   completed: { badge: 'bg-gray-100 text-gray-600' },
+  approved: { badge: 'bg-emerald-100 text-emerald-800' },
 };
 
 const phaseColors: Record<number, { bg: string; fill: string }> = {
@@ -40,6 +41,7 @@ const statusFillPercent: Record<string, string> = {
   active_not_recruiting: '55%',
   enrolling_by_invitation: '20%',
   completed: '100%',
+  approved: '100%',
 };
 
 const statusBarColors: Record<string, { bg: string; fill: string }> = {
@@ -48,6 +50,7 @@ const statusBarColors: Record<string, { bg: string; fill: string }> = {
   active_not_recruiting: { bg: '#e0f2fe', fill: '#0ea5e9' },
   enrolling_by_invitation: { bg: '#ede9fe', fill: '#8b5cf6' },
   completed: { bg: '#d1fae5', fill: '#10b981' },
+  approved: { bg: '#d1fae5', fill: '#10b981' },
 };
 
 function getStatusBar(status: string) {
@@ -60,6 +63,7 @@ const statusLabels: Record<string, string> = {
   active_not_recruiting: 'Active',
   enrolling_by_invitation: 'By Invitation',
   completed: 'Completed',
+  approved: 'Approved',
 };
 
 const statusDotColors: Record<string, string> = {
@@ -68,6 +72,7 @@ const statusDotColors: Record<string, string> = {
   active_not_recruiting: '#0ea5e9',
   enrolling_by_invitation: '#8b5cf6',
   completed: '#6b7280',
+  approved: '#10b981',
 };
 
 function getBadge(status: string) {

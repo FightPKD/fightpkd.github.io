@@ -5,16 +5,17 @@ import articles from '../../data/drug-articles.json';
 
 const articlesData = articles as Record<string, any>;
 
-const drugsByPhase = [3, 2, 1].map(phase => ({
+const drugsByPhase = [4, 3, 2, 1].map(phase => ({
   phase,
   drugs: drugs.filter(d => d.phase === phase).sort((a, b) => {
     const aHasArticle = articlesData[a.id] ? 1 : 0;
     const bHasArticle = articlesData[b.id] ? 1 : 0;
     return bHasArticle - aHasArticle;
   }),
-}));
+})).filter(g => g.drugs.length > 0);
 
 const phaseConfig: Record<number, { label: string; color: string; border: string; bg: string }> = {
+  4: { label: 'Approved', color: 'text-emerald-700', border: 'border-emerald-200', bg: 'bg-emerald-50' },
   3: { label: 'Phase 3', color: 'text-indigo-700', border: 'border-indigo-200', bg: 'bg-indigo-50' },
   2: { label: 'Phase 2', color: 'text-blue-700', border: 'border-blue-200', bg: 'bg-blue-50' },
   1: { label: 'Phase 1', color: 'text-teal-700', border: 'border-teal-200', bg: 'bg-teal-50' },
@@ -26,6 +27,7 @@ const statusLabels: Record<string, string> = {
   active_not_recruiting: 'Active',
   completed: 'Completed',
   enrolling_by_invitation: 'By Invitation',
+  approved: 'FDA Approved',
 };
 
 const statusColors: Record<string, string> = {
@@ -34,6 +36,7 @@ const statusColors: Record<string, string> = {
   active_not_recruiting: 'text-sky-700 bg-sky-50',
   completed: 'text-gray-600 bg-gray-50',
   enrolling_by_invitation: 'text-purple-700 bg-purple-50',
+  approved: 'text-emerald-700 bg-emerald-50',
 };
 ---
 
