@@ -9,9 +9,9 @@ const completedTherapies = therapies.filter(t => t.status === 'completed').lengt
 ---
 
 <BaseLayout title="Home" description="FightPKD — Tracking the drug development pipeline and therapeutic research for Polycystic Kidney Disease patients.">
-  <section class="relative overflow-hidden">
+  <section class="relative">
     <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 pb-16">
       <div class="max-w-3xl">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
           Tracking the fight against
@@ -37,7 +37,7 @@ const completedTherapies = therapies.filter(t => t.status === 'completed').lengt
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative -mt-10 z-10">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
         <div class="flex items-center gap-3">

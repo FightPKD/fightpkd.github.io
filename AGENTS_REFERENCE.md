@@ -2,9 +2,11 @@
 
 This file is a structured guide for AI agents to understand, update, and maintain the FightPKD website data.
 
+**IMPORTANT:** Before making changes, read `CONSTITUTION.md` — it defines update rules, the sources log to maintain, and validation checklist.
+
 ## Project Overview
 
-A static website (Astro + Tailwind CSS) deployed to GitHub Pages that tracks the drug development pipeline and therapeutic research for Polycystic Kidney Disease (PKD/ADPKD).
+A static website (Astro + Tailwind CSS) deployed to GitHub Pages that tracks the drug development pipeline and therapeutic research for Polycystic Kidney Disease (PKD/ADPKD). Requires Node.js 22+.
 
 ## Data Files
 
@@ -125,7 +127,7 @@ When searching, use these alternative names:
 | ABBV-CLS-628 | CLS-628, Calico compound |
 | AL01211 | AceLink GCS inhibitor |
 | AZD1613 | AstraZeneca PAPPA-1 inhibitor, PIONEER-PKD |
-| Farabursen | RGLS8429, anti-miR-17, Regulus |
+| Farabursen | RGLS8429, CYX082, anti-miR-17, Regulus, Novartis |
 | PYC-003 | PYC Therapeutics antisense, peptide-PMO |
 | VX-407 | Vertex PKD modulator, AGLOW |
 | JMKX003142 | Jemincare |
