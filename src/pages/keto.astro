@@ -210,12 +210,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </li>
           </ul>
 
-          <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
-            <p class="text-sm text-amber-800">
-              <strong>Important:</strong> This study had no control group and was authored entirely by company employees.
-              These results should be interpreted with caution pending independent replication.
-            </p>
-          </div>
         </section>
 
         <!-- Preclinical Evidence -->
@@ -282,7 +276,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="bg-white border border-gray-200 rounded-lg p-4">
               <h3 class="font-medium text-gray-900">Thomas Weimbs, PhD</h3>
               <p class="text-sm text-gray-500">UC Santa Barbara</p>
-              <p class="text-xs text-gray-600 mt-2">Foundational ketosis-PKD research. BHB mechanisms. Co-founder of Santa Barbara Nutrients (KetoCitra).</p>
+              <p class="text-xs text-gray-600 mt-2">Foundational ketosis-PKD research. BHB mechanisms. Pioneer of metabolic interventions for PKD.</p>
             </div>
             <div class="bg-white border border-gray-200 rounded-lg p-4">
               <h3 class="font-medium text-gray-900">Roman-Ulrich Mueller, MD</h3>
@@ -302,48 +296,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </section>
 
-        <!-- Important Caveats -->
-        <section id="caveats" class="mb-12">
-          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-200">Important Caveats</h2>
-          <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-            <ul class="space-y-3 text-sm text-red-900">
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                </svg>
-                <span><strong>Conflict of interest:</strong> The majority of ketogenic/BHB/KetoCitra research originates from or is connected to the Weimbs lab / Santa Barbara Nutrients (the company selling KetoCitra)</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                </svg>
-                <span><strong>No long-term RCT data:</strong> The longest ketogenic intervention trial is 12 months (Colorado TRE trial), which had adherence problems</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                </svg>
-                <span><strong>Kidney volume reduction not proven:</strong> The 3-month KETO-ADPKD trial showed a non-significant trend only</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                </svg>
-                <span><strong>eGFR confounders:</strong> Short-term eGFR improvements could be explained by weight loss, hemodynamic changes, or measurement artifacts</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                </svg>
-                <span><strong>Independent replication needed:</strong> The DIPAK observational study provides some support, but most interventional data comes from one research network</span>
-              </li>
-            </ul>
-          </div>
-          <p class="text-sm text-gray-500 mt-4">
-            The field is rapidly growing (311+ publications on dietary interventions for PKD), and larger, longer trials are expected in the coming years.
-            Always discuss dietary changes with your nephrologist.
-          </p>
-        </section>
       </article>
 
       <!-- Sidebar TOC -->
@@ -358,7 +310,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li><a href="#preclinical" class="text-gray-600 hover:text-primary-600 transition-colors">Preclinical Evidence</a></li>
             <li><a href="#tre" class="text-gray-600 hover:text-primary-600 transition-colors">Time-Restricted Eating</a></li>
             <li><a href="#researchers" class="text-gray-600 hover:text-primary-600 transition-colors">Key Researchers</a></li>
-            <li><a href="#caveats" class="text-gray-600 hover:text-primary-600 transition-colors">Important Caveats</a></li>
           </ul>
         </nav>
       </aside>
