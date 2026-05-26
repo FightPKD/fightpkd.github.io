@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Renato" description="Meet Renato Molina Toth — the software engineer and nutritionist behind PKD Cure Tracker.">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="mb-8">
+      <a href="/about" class="text-sm text-primary-600 hover:text-primary-700 inline-flex items-center gap-1">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        About
+      </a>
+    </nav>
+
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">Meet the person behind this project</h1>
+
+    <div class="prose prose-gray max-w-none space-y-6 text-gray-600 leading-relaxed">
+      <p class="text-lg">
+        Hi, I'm <strong class="text-gray-900">Renato Molina Toth</strong> — a software engineer and nutritionist based in Canada.
+      </p>
+
+      <p>
+        PKD runs in my family. I've been involved with the PKD community for years, following the research, connecting with other patients and caregivers, and trying to make sense of a rapidly evolving landscape of treatments and clinical trials.
+      </p>
+
+      <p>
+        I built PKD Cure Tracker because I saw a gap: the information is out there — in journal papers, on ClinicalTrials.gov, in conference abstracts — but it's fragmented and hard to keep up with. As someone with both a technical background and training in nutrition, I wanted to create a single place where our community can find clear, impartial, and up-to-date information without wading through noise.
+      </p>
+
+      <p>
+        This is a personal project driven by a personal stake. No company, no sponsors, no ads — just a commitment to keeping this resource useful and current for everyone fighting PKD.
+      </p>
+
+      <div class="bg-primary-50 border border-primary-200 rounded-xl p-6 mt-8">
+        <p class="text-sm text-gray-600">
+          Have a suggestion, correction, or want to collaborate? Reach out — this project is built for the community, and community input makes it better.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

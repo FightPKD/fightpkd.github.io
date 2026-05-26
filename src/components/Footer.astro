@@ -2,15 +2,40 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-white border-t border-gray-200 mt-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="text-sm text-gray-500">
-        <p>&copy; {year} PKD Cure Tracker. For informational purposes only — not medical advice.</p>
+<footer class="bg-gray-50 border-t border-gray-200 mt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <p class="font-semibold text-gray-900 mb-3">PKD Cure Tracker</p>
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Tracking the drug development pipeline and therapeutic research for Polycystic Kidney Disease patients. 100% free, ad-free, and community-driven.
+        </p>
       </div>
-      <div class="flex items-center gap-4 text-sm text-gray-500">
-        <span>Data sourced from ClinicalTrials.gov and published research</span>
+
+      <div>
+        <p class="font-semibold text-gray-900 mb-3">Explore</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/pipeline" class="text-gray-500 hover:text-primary-600 transition-colors">Drug Pipeline</a></li>
+          <li><a href="/keto" class="text-gray-500 hover:text-primary-600 transition-colors">Keto & PKD</a></li>
+          <li><a href="/therapies" class="text-gray-500 hover:text-primary-600 transition-colors">Therapies</a></li>
+          <li><a href="/trials" class="text-gray-500 hover:text-primary-600 transition-colors">Clinical Trials</a></li>
+          <li><a href="/recruiting" class="text-gray-500 hover:text-primary-600 transition-colors">Recruiting Now</a></li>
+        </ul>
       </div>
+
+      <div>
+        <p class="font-semibold text-gray-900 mb-3">About</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/about" class="text-gray-500 hover:text-primary-600 transition-colors">Our Mission</a></li>
+          <li><a href="/about/renato" class="text-gray-500 hover:text-primary-600 transition-colors">Who's Behind This</a></li>
+          <li><a href="/phases" class="text-gray-500 hover:text-primary-600 transition-colors">Trial Phases Guide</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 mt-8 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-gray-400">&copy; {year} PKD Cure Tracker. For informational purposes only — not medical advice.</p>
+      <p class="text-xs text-gray-400">Data sourced from ClinicalTrials.gov and published research</p>
     </div>
   </div>
 </footer>
