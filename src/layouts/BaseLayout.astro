@@ -65,6 +65,7 @@ const fullTitle = title === 'Home' ? 'PKD Cure Tracker — Polycystic Kidney Dis
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <title>{fullTitle}</title>
+    <slot name="head" />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",

@@ -5,28 +5,145 @@ import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import news from '../../data/news.json';
 
 const sortedNews = [...news].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "PKD News & Drug Therapy Updates",
+  "description": "Latest news on polycystic kidney disease (PKD/ADPKD) drug development, clinical trial results, and research breakthroughs.",
+  "url": "https://pkdcuretracker.com/news",
+  "publisher": {
+    "@type": "Organization",
+    "name": "PKD Cure Tracker",
+    "url": "https://pkdcuretracker.com"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": sortedNews.map((article, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `https://pkdcuretracker.com/news/${article.id}`,
+      "name": article.title
+    }))
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pkdcuretracker.com" },
+    { "@type": "ListItem", "position": 2, "name": "News", "item": "https://pkdcuretracker.com/news" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What new drugs are being developed for polycystic kidney disease in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of 2026, the most promising PKD drugs in development include farabursen (anti-miR-17 from Novartis, entering Phase 3), VX-407 (Vertex, Phase 2), ABBV-CLS-628 (Calico/AbbVie, Phase 2), AZD1613 (AstraZeneca, Phase 1), dapagliflozin (Phase 3 STOP-PKD trial), and bempedoic acid (Phase 2 BEAT-PKD trial). Farabursen showed the most impressive Phase 1b results, effectively halting kidney growth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a ketogenic diet help polycystic kidney disease?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Clinical trial evidence from Juntendo University (2026) shows that ketogenic metabolic therapy achieved actual kidney volume decrease in ADPKD patients — the first time a dietary intervention has reversed kidney growth. The 12-month results showed a strong dose-response correlation between blood ketone levels and kidney shrinkage (Spearman rho = -0.86, p=0.012). A larger controlled trial with 50+ participants is underway."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is farabursen and how does it treat PKD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Farabursen (formerly RGLS8429/CYX082) is an anti-miR-17 oligonucleotide developed by Novartis for ADPKD. It works by inhibiting microRNA-17, which restores production of polycystin-1 and polycystin-2 — the proteins whose deficiency causes the disease. In Phase 1b, farabursen halted kidney growth (0.05% vs 2.58% in placebo). Novartis acquired the drug for $1.7 billion and is launching a global Phase 3 trial in 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When will new PKD treatments be available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The fastest path to new PKD treatments includes repurposed drugs already FDA-approved for other conditions: dapagliflozin (SGLT2 inhibitor, Phase 3 results expected 2029) and bempedoic acid (AMPK activator, Phase 2 completing 2028). Farabursen, the most promising novel drug, could reach market by 2030-2031 if Phase 3 confirms Phase 1b results. Ketogenic dietary intervention is available now through programs like Ren-Nu."
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="PKD News & Updates" description="Latest news on PKD drug therapies, clinical trials, and research developments for polycystic kidney disease.">
+<BaseLayout title="PKD News & Drug Therapy Updates 2026" description="Latest polycystic kidney disease (PKD) news: farabursen Phase 3, ketogenic diet clinical trials, SGLT2 inhibitors, and new ADPKD drug developments. Updated weekly.">
+  <script type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <header class="mb-10">
+      <nav class="mb-4 text-sm" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-gray-500">
+          <li><a href="/" class="hover:text-primary-600 transition-colors">Home</a></li>
+          <li><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></li>
+          <li class="text-gray-900 font-medium">News</li>
+        </ol>
+      </nav>
       <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">PKD News & Updates</h1>
-      <p class="text-lg text-gray-600">Recent developments in PKD drug therapies, clinical trials, and research breakthroughs.</p>
+      <p class="text-lg text-gray-600">Recent developments in polycystic kidney disease drug therapies, clinical trial results, and research breakthroughs for ADPKD patients.</p>
     </header>
 
-    <div class="space-y-6">
-      {sortedNews.map((article) => (
-        <NewsCard
-          id={article.id}
-          title={article.title}
-          date={article.date}
-          category={article.category}
-          summary={article.summary}
-          relatedDrugs={article.relatedDrugs}
-          tags={article.tags}
-        />
-      ))}
-    </div>
+    <section aria-label="News articles">
+      <div class="space-y-6">
+        {sortedNews.map((article) => (
+          <NewsCard
+            id={article.id}
+            title={article.title}
+            date={article.date}
+            category={article.category}
+            summary={article.summary}
+            relatedDrugs={article.relatedDrugs}
+            tags={article.tags}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-16" aria-label="Frequently asked questions about PKD treatments">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <details class="group bg-white rounded-xl border border-gray-200 p-5" open>
+          <summary class="flex items-center justify-between cursor-pointer text-base font-medium text-gray-900">
+            What new drugs are being developed for polycystic kidney disease in 2026?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-gray-700 leading-relaxed">As of 2026, the most promising PKD drugs in development include <a href="/drugs/farabursen" class="text-primary-600 hover:text-primary-700 font-medium">farabursen</a> (anti-miR-17 from Novartis, entering Phase 3), <a href="/drugs/vx-407" class="text-primary-600 hover:text-primary-700 font-medium">VX-407</a> (Vertex, Phase 2), <a href="/drugs/abbv-cls-628" class="text-primary-600 hover:text-primary-700 font-medium">ABBV-CLS-628</a> (Calico/AbbVie, Phase 2), <a href="/drugs/azd1613" class="text-primary-600 hover:text-primary-700 font-medium">AZD1613</a> (AstraZeneca, Phase 1), <a href="/drugs/dapagliflozin" class="text-primary-600 hover:text-primary-700 font-medium">dapagliflozin</a> (Phase 3 STOP-PKD trial), and <a href="/drugs/bempedoic-acid" class="text-primary-600 hover:text-primary-700 font-medium">bempedoic acid</a> (Phase 2 BEAT-PKD trial). Farabursen showed the most impressive Phase 1b results, effectively halting kidney growth. See our <a href="/pipeline" class="text-primary-600 hover:text-primary-700 font-medium">full drug pipeline</a> for all trials.</p>
+        </details>
+        <details class="group bg-white rounded-xl border border-gray-200 p-5">
+          <summary class="flex items-center justify-between cursor-pointer text-base font-medium text-gray-900">
+            Can a ketogenic diet help polycystic kidney disease?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-gray-700 leading-relaxed">Clinical trial evidence from Juntendo University (2026) shows that ketogenic metabolic therapy achieved actual kidney volume decrease in ADPKD patients — the first time a dietary intervention has reversed kidney growth. The 12-month results showed a strong dose-response correlation between blood ketone levels and kidney shrinkage (Spearman rho = -0.86, p=0.012). A larger controlled trial with 50+ participants is underway, and the <a href="/news/cleveland-clinic-keto-pkd-recruiting" class="text-primary-600 hover:text-primary-700 font-medium">Cleveland Clinic has begun an independent validation study</a>. Read our <a href="/keto" class="text-primary-600 hover:text-primary-700 font-medium">full keto & PKD guide</a> for details.</p>
+        </details>
+        <details class="group bg-white rounded-xl border border-gray-200 p-5">
+          <summary class="flex items-center justify-between cursor-pointer text-base font-medium text-gray-900">
+            What is farabursen and how does it treat PKD?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-gray-700 leading-relaxed">Farabursen (formerly RGLS8429/CYX082) is an anti-miR-17 oligonucleotide developed by Novartis for ADPKD. It works by inhibiting microRNA-17, which restores production of polycystin-1 and polycystin-2 — the proteins whose deficiency causes the disease. In Phase 1b, farabursen halted kidney growth (0.05% vs 2.58% in placebo). Novartis acquired the drug for $1.7 billion and is <a href="/news/farabursen-phase-3-design-era-2026" class="text-primary-600 hover:text-primary-700 font-medium">launching a global Phase 3 trial in 2026</a>. Read the <a href="/drugs/farabursen" class="text-primary-600 hover:text-primary-700 font-medium">full farabursen profile</a>.</p>
+        </details>
+        <details class="group bg-white rounded-xl border border-gray-200 p-5">
+          <summary class="flex items-center justify-between cursor-pointer text-base font-medium text-gray-900">
+            When will new PKD treatments be available?
+            <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="mt-3 text-sm text-gray-700 leading-relaxed">The fastest path to new PKD treatments includes repurposed drugs already FDA-approved for other conditions: <a href="/drugs/dapagliflozin" class="text-primary-600 hover:text-primary-700 font-medium">dapagliflozin</a> (SGLT2 inhibitor, Phase 3 results expected 2029) and <a href="/drugs/bempedoic-acid" class="text-primary-600 hover:text-primary-700 font-medium">bempedoic acid</a> (AMPK activator, Phase 2 completing 2028). <a href="/drugs/farabursen" class="text-primary-600 hover:text-primary-700 font-medium">Farabursen</a>, the most promising novel drug, could reach market by 2030–2031 if Phase 3 confirms Phase 1b results. Ketogenic dietary intervention is available now through programs like Ren-Nu. See our <a href="/pipeline" class="text-primary-600 hover:text-primary-700 font-medium">complete pipeline tracker</a> for timelines.</p>
+        </details>
+      </div>
+    </section>
 
     <div class="mt-12">
       <NewsletterSignup compact />
