@@ -4,6 +4,7 @@ const currentPath = rawPath.endsWith('/') && rawPath !== '/' ? rawPath.slice(0, 
 
 const navItems = [
   { href: '/', label: 'Home' },
+  { href: '/news', label: 'News' },
   { href: '/pipeline', label: 'Drug Pipeline' },
   { href: '/keto', label: 'Keto & PKD' },
   { href: '/therapies', label: 'Therapies' },
@@ -12,6 +13,7 @@ const navItems = [
 
 function isActive(href: string): boolean {
   if (href === '/') return currentPath === '/';
+  if (href === '/news') return currentPath === '/news' || currentPath.startsWith('/news/');
   if (href === '/pipeline') return currentPath === '/pipeline' || currentPath.startsWith('/drugs/');
   if (href === '/keto') return currentPath === '/keto' || currentPath.startsWith('/research/');
   return currentPath === href;

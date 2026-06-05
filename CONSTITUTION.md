@@ -32,6 +32,9 @@ Add it to the Sources Log section below with:
 | 2026-05-21 | Keto/KetoCitra | PubMed, Cell Reports Medicine | KETO-ADPKD trial results, Ren-Nu data |
 | 2026-05-21 | Farabursen | Novartis press releases, ClinicalTrials.gov | Novartis acquired Regulus ($1.7B, closed Jun 2025). Phase 1b showed htTKV growth halted. Phase 3 planned. Internal code: CYX082. NCT05521191 |
 | 2026-05-21 | Farabursen | ASN Kidney Week 2025, WCN 2026 (Yokohama) | Oral + poster presentations confirming PC1/PC2 biomarker increases, 300mg dose selected |
+| 2026-06-05 | Farabursen | Novartis ERA 2026 press release (May 26, 2026) | Global Phase 3 trial design presented at ERA 2026 Glasgow (Abstract #3398, oral June 4). Phase 3 imminent. |
+| 2026-06-05 | JMKX003142 | ClinicalTrials.gov | Multiple Phase 1 studies registered (NCT07565441, NCT07470177, NCT07463053). DDI study est. start May 2026. |
+| 2026-06-05 | Rotigotine | ClinicalTrials.gov | Phase 2 for ADPKD registered (NCT06291116), dopamine agonist, est. start March 2026. |
 
 ## Data Validation Checklist
 

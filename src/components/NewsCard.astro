@@ -1,0 +1,81 @@
+---
+import drugs from '../data/drugs.json';
+
+interface Props {
+  id: string;
+  title: string;
+  date: string;
+  category: string;
+  summary: string;
+  relatedDrugs: string[];
+  tags: string[];
+}
+
+const { id, title, date, category, summary, relatedDrugs, tags } = Astro.props;
+
+const categoryLabels: Record<string, string> = {
+  'clinical-data': 'Clinical Data',
+  'regulatory': 'Regulatory',
+  'trial-update': 'Trial Update',
+  'conference': 'Conference',
+  'acquisition': 'Acquisition',
+  'approval': 'Approval',
+};
+
+const categoryColors: Record<string, string> = {
+  'clinical-data': 'bg-blue-100 text-blue-800',
+  'regulatory': 'bg-purple-100 text-purple-800',
+  'trial-update': 'bg-teal-100 text-teal-800',
+  'conference': 'bg-amber-100 text-amber-800',
+  'acquisition': 'bg-indigo-100 text-indigo-800',
+  'approval': 'bg-emerald-100 text-emerald-800',
+};
+
+const formattedDate = new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const drugNames = relatedDrugs.map(drugId => {
+  const drug = drugs.find((d: any) => d.id === drugId);
+  return drug ? { id: drug.id, name: drug.name } : null;
+}).filter(Boolean) as { id: string; name: string }[];
+---
+
+<article class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md hover:border-primary-300 transition-all">
+  <div class="flex items-center justify-between mb-3">
+    <time class="text-sm text-gray-500" datetime={date}>{formattedDate}</time>
+    <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold ${categoryColors[category] || 'bg-gray-100 text-gray-800'}`}>
+      {categoryLabels[category] || category}
+    </span>
+  </div>
+
+  <h3 class="text-lg font-semibold text-gray-900 mb-2">
+    <a href={`/news/${id}`} class="hover:text-primary-600 transition-colors">
+      {title}
+    </a>
+  </h3>
+
+  <p class="text-gray-600 text-sm leading-relaxed mb-4">{summary}</p>
+
+  {drugNames.length > 0 && (
+    <div class="flex flex-wrap gap-2 mb-4">
+      {drugNames.map((drug) => (
+        <a
+          href={`/drugs/${drug.id}`}
+          class="inline-flex items-center px-2.5 py-1 bg-primary-50 text-primary-700 rounded-full text-xs font-medium hover:bg-primary-100 transition-colors"
+        >
+          {drug.name}
+        </a>
+      ))}
+    </div>
+  )}
+
+  <a href={`/news/${id}`} class="inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors">
+    Read full article
+    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </a>
+</article>

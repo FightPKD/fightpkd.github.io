@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import news from '../../data/news.json';
+
+const sortedNews = [...news].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<BaseLayout title="PKD News & Updates" description="Latest news on PKD drug therapies, clinical trials, and research developments for polycystic kidney disease.">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="mb-10">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">PKD News & Updates</h1>
+      <p class="text-lg text-gray-600">Recent developments in PKD drug therapies, clinical trials, and research breakthroughs.</p>
+    </header>
+
+    <div class="space-y-6">
+      {sortedNews.map((article) => (
+        <NewsCard
+          id={article.id}
+          title={article.title}
+          date={article.date}
+          category={article.category}
+          summary={article.summary}
+          relatedDrugs={article.relatedDrugs}
+          tags={article.tags}
+        />
+      ))}
+    </div>
+
+    <div class="mt-12">
+      <NewsletterSignup compact />
+    </div>
+
+    <div class="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-4">
+      <p class="text-xs text-amber-800">
+        <strong>Disclaimer:</strong> This information is for educational purposes only and is not medical advice. News articles are based on publicly available data from ClinicalTrials.gov, company press releases, and published research. Consult your nephrologist before making treatment decisions.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

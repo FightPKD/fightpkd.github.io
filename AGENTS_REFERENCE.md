@@ -237,6 +237,7 @@ The stat card links to this same PubMed URL so users can verify the number thems
 
 ## Update Frequency Recommendation
 
+- **News page:** Weekly or biweekly — timely updates on drugs, trials, conferences
 - **Drug pipeline:** Monthly — trial statuses change frequently
 - **Therapy research:** Quarterly — publications come in waves
 - **Keto page:** Quarterly or when major new publications appear
@@ -257,9 +258,13 @@ src/
 │   │   ├── index.astro      (keto research index, grouped by type)
 │   │   └── [id].astro       (dynamic route → individual study pages)
 │   ├── therapies.astro      (therapeutic research dashboard)
-│   └── keto.astro           (dedicated keto overview page)
+│   ├── keto.astro           (dedicated keto overview page)
+│   └── news/
+│       ├── index.astro      (news feed, reverse chronological)
+│       └── [id].astro       (dynamic route → individual news articles)
 ├── components/
 │   ├── DrugCard.astro       (renders one drug entry, links to article page)
+│   ├── NewsCard.astro       (renders one news article card on feed)
 │   ├── PipelineTracker.astro (phase overview visualization)
 │   ├── TherapyCard.astro    (renders one therapy entry)
 │   ├── NewsletterSignup.astro (Kit form, compact or full-width mode)
@@ -268,6 +273,7 @@ src/
 ├── data/
 │   ├── drugs.json           ← UPDATE THIS (trial data)
 │   ├── drug-articles.json   ← UPDATE THIS (article content per drug)
+│   ├── news.json            ← UPDATE THIS (timely news articles)
 │   ├── keto-studies.json    ← UPDATE THIS (keto/metabolic research)
 │   └── therapies.json       ← UPDATE THIS
 ├── layouts/
@@ -307,6 +313,69 @@ Each drug has an in-depth article page at `/drugs/{id}`. Articles are stored in 
 2. Add a corresponding entry in `drug-articles.json` with the full article
 3. The dynamic route `[id].astro` will automatically generate the page
 4. DrugCard in `/pipeline` automatically links to it via "Read article"
+
+## News System
+
+The news page at `/news` displays timely updates about PKD drug/therapy developments. Individual articles are at `/news/{id}`. News articles are stored in `src/data/news.json`.
+
+**Schema:**
+```json
+[
+  {
+    "id": "string (kebab-case slug, used in URL)",
+    "title": "string (headline)",
+    "date": "string (YYYY-MM-DD)",
+    "category": "string (clinical-data | regulatory | trial-update | conference | acquisition | approval)",
+    "summary": "string (1-3 sentences for the feed card)",
+    "body": ["string array (one string per paragraph for the full article)"],
+    "relatedDrugs": ["string array (drug IDs from drugs.json)"],
+    "sourceUrl": "string (URL to primary source)",
+    "sourceName": "string (display label for source)",
+    "tags": ["string array"]
+  }
+]
+```
+
+**Category values:**
+- `clinical-data` — new trial results or data presentations
+- `regulatory` — FDA/EMA interactions, approvals, designations
+- `trial-update` — enrollment changes, new trial registrations, design updates
+- `conference` — presentations at ERA, ASN, WCN, etc.
+- `acquisition` — company acquisitions, partnerships, licensing deals
+- `approval` — drug approvals for PKD indication
+
+### How to Add a News Article
+
+1. Add a new entry to the array in `src/data/news.json`
+2. Use a descriptive `id` slug (e.g., `farabursen-phase-3-design-era-2026`)
+3. Set `date` to the publication/announcement date
+4. Write a concise `summary` (shown on the feed card) and detailed `body` paragraphs (shown on the detail page)
+5. Link `relatedDrugs` to existing drug IDs in `drugs.json` where applicable
+6. The `NewsCard` component and dynamic route `[id].astro` will automatically render it
+
+### Key Sources for PKD News
+
+| Source | Use For |
+|--------|---------|
+| Novartis press releases (novartis.com/news) | Farabursen updates |
+| ClinicalTrials.gov (new registrations, status changes) | Trial updates |
+| ERA/ASN/WCN conference abstracts | Data presentations |
+| PKD Foundation (pkdcure.org) | Community-facing announcements |
+| Company press releases (AstraZeneca, Vertex, Otsuka) | Pipeline updates |
+| STAT News, Reuters Health | Industry coverage |
+
+### When to Add News
+
+- New trial registered on ClinicalTrials.gov for PKD
+- Phase advancement or trial completion
+- Conference data presentations (ERA, ASN, WCN)
+- Company acquisition or partnership involving PKD drugs
+- Regulatory milestones (FDA designations, approvals)
+- Significant enrollment milestones
+
+### News Article Freshness
+
+News articles should generally cover events from the last 1-3 months. Older articles remain on the page as an archive but naturally move down the feed. Consider archiving or removing articles older than 12 months.
 
 ## Build & Deploy
 

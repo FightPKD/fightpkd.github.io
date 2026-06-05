@@ -1,0 +1,88 @@
+[
+  {
+    "id": "farabursen-phase-3-design-era-2026",
+    "title": "Novartis Unveils Global Phase 3 Trial Design for Farabursen at ERA 2026",
+    "date": "2026-05-26",
+    "category": "conference",
+    "summary": "Novartis announced the presentation of its global Phase 3 trial design for farabursen (anti-miR-17) in ADPKD at the European Renal Association Congress 2026 in Glasgow, marking the next major step after extraordinary Phase 1b results that halted kidney growth.",
+    "body": [
+      "Novartis has confirmed the formal presentation of its global Phase 3 registrational trial design for farabursen at ERA 2026, held June 3-6 in Glasgow, UK. The oral presentation (Abstract #3398) took place on June 4 and detailed the design of what will be the pivotal trial to bring farabursen to market for ADPKD patients.",
+      "Farabursen (formerly RGLS8429/CYX082) is an anti-miR-17 oligonucleotide that works by restoring production of polycystin-1 and polycystin-2 — the proteins whose deficiency causes ADPKD. In Phase 1b (NCT05521191, 68 patients), the drug effectively halted kidney growth: the treatment group showed just 0.05% height-adjusted total kidney volume (htTKV) growth compared to 2.58% in placebo — potentially the most impressive result in PKD drug development in decades.",
+      "Novartis acquired Regulus Therapeutics for $1.7 billion in a deal that closed in June 2025, signaling extreme confidence in farabursen's potential. The 300mg subcutaneous dose administered every two weeks was selected based on biomarker data confirming restored polycystin-1 and polycystin-2 protein markers, presented at ASN Kidney Week 2025 and WCN 2026 in Yokohama.",
+      "The Phase 3 trial design presentation is a critical milestone: it indicates the study is imminent and will define the endpoints, patient population, and duration that regulators will use to evaluate approval. No NCT ID has been registered for the Phase 3 trial yet on ClinicalTrials.gov, but registration typically follows shortly after design finalization.",
+      "For the ADPKD community, farabursen represents a potential paradigm shift — rather than managing symptoms or slowing progression modestly like tolvaptan, it addresses the root genetic cause of the disease. If Phase 3 confirms Phase 1b results, it could become the most effective disease-modifying therapy ever developed for PKD."
+    ],
+    "relatedDrugs": ["farabursen"],
+    "sourceUrl": "https://www.novartis.com/news/media-releases/new-novartis-data-era-2026-advance-scientific-understanding-kidney-disease-and-reinforce-portfolio-strength",
+    "sourceName": "Novartis Press Release",
+    "tags": ["farabursen", "phase-3", "ERA-2026", "novartis", "anti-miR-17"]
+  },
+  {
+    "id": "jmkx003142-phase-1-studies-advance",
+    "title": "Jemincare's JMKX003142 Advances with Multiple Phase 1 Studies for PKD",
+    "date": "2026-05-11",
+    "category": "trial-update",
+    "summary": "Chinese pharmaceutical company Jemincare has registered multiple Phase 1 studies for its PKD drug candidate JMKX003142, including a drug-drug interaction study estimated to begin in May 2026, signaling rapid clinical development.",
+    "body": [
+      "Jemincare has advanced its PKD drug candidate JMKX003142 into multiple Phase 1 studies, with the most recent — a drug-drug interaction study (NCT07565441) — estimated to begin recruiting in May 2026. This follows two other registered Phase 1 studies: a QTc interval study (NCT07470177) and a mass balance/absolute bioavailability study (NCT07463053).",
+      "The registration of multiple early-phase pharmacology studies suggests Jemincare is building the complete pharmacokinetic profile required to advance JMKX003142 toward Phase 2 efficacy trials. Drug-drug interaction studies are typically among the last Phase 1 requirements before advancing to patient trials.",
+      "Limited information is publicly available about JMKX003142's mechanism of action or preclinical results. The drug is being developed in China, and no publications in English-language journals have emerged yet. However, the pace of clinical study registration indicates active and well-funded development.",
+      "For PKD patients, JMKX003142 represents another pipeline candidate with potential, though it remains early-stage with no efficacy data in humans. The global PKD community will be watching for mechanism disclosure and plans for international trials."
+    ],
+    "relatedDrugs": ["jmkx003142"],
+    "sourceUrl": "https://clinicaltrials.gov/study/NCT07565441",
+    "sourceName": "ClinicalTrials.gov",
+    "tags": ["jmkx003142", "phase-1", "jemincare", "china"]
+  },
+  {
+    "id": "cleveland-clinic-keto-pkd-recruiting",
+    "title": "Cleveland Clinic Begins Recruiting for Ketogenic Diet PKD Study",
+    "date": "2026-02-25",
+    "category": "trial-update",
+    "summary": "The Cleveland Clinic has begun recruiting participants for an independent study evaluating the metabolic impacts of the Ren-Nu dietary program in PKD patients, providing crucial validation outside the original research group.",
+    "body": [
+      "The Cleveland Clinic has officially begun recruiting for its study on the metabolic impacts of the Ren-Nu plant-focused ketogenic dietary program for polycystic kidney disease (NCT07454174). This is a significant development because it represents independent validation of the ketogenic approach to PKD management outside of the original Weimbs lab and University of California researchers.",
+      "The Ren-Nu program is a structured plant-focused ketogenic diet specifically designed for PKD patients, developed based on preclinical evidence showing that ketosis can slow cyst growth. Previous data from 103 patients published in Frontiers in Nutrition (2025) showed promising results including improvements in kidney function markers.",
+      "Independent replication at a major academic medical center like the Cleveland Clinic is a critical step in establishing dietary ketosis as a legitimate therapeutic approach for PKD. If results confirm prior findings, it strengthens the case for larger randomized controlled trials.",
+      "PKD patients interested in dietary interventions have been following the ketogenic approach closely since the landmark 2019 Cell Metabolism paper demonstrated that ketosis inhibits cyst growth in animal models. This Cleveland Clinic study bridges the gap between those preclinical findings and the growing real-world evidence."
+    ],
+    "relatedDrugs": [],
+    "sourceUrl": "https://clinicaltrials.gov/study/NCT07454174",
+    "sourceName": "ClinicalTrials.gov",
+    "tags": ["ketogenic-diet", "ren-nu", "cleveland-clinic", "dietary-intervention"]
+  },
+  {
+    "id": "beat-pkd-bempedoic-acid-approaching",
+    "title": "BEAT-PKD: Bempedoic Acid Trial Nears Recruitment Start",
+    "date": "2026-05-15",
+    "category": "trial-update",
+    "summary": "The DoD-funded BEAT-PKD trial testing bempedoic acid in 120 ADPKD patients is approaching its estimated recruitment start date of July 2026, offering a kidney-specific AMPK activator as an alternative to metformin.",
+    "body": [
+      "The BEAT-PKD trial (NCT07282821) — a Phase 2, randomized, double-blind, placebo-controlled study of bempedoic acid in ADPKD — is approaching its estimated recruitment start date of July 2026. Funded by the U.S. Department of Defense, the trial will enroll 120 patients receiving 180mg bempedoic acid daily for 2 years.",
+      "Bempedoic acid (brand name: Nexletol) is already FDA-approved for lowering LDL cholesterol, but researchers at the University of Vermont discovered it has a second, potentially more relevant property for PKD: it's a potent AMPK activator. Unlike metformin — which activates AMPK throughout the body — bempedoic acid is a pro-drug activated specifically in the liver and kidney, potentially offering targeted benefits with fewer GI side effects.",
+      "The primary endpoint is change in Total Kidney Volume (TKV) measured by MRI. AMPK activation in PKD inhibits both mTOR (reducing cell proliferation) and CFTR chloride channels (reducing cyst fluid secretion), addressing two key drivers of cyst growth.",
+      "If successful, bempedoic acid could be prescribed off-label almost immediately since it already has FDA approval and an established safety profile. This makes it one of the faster potential paths to a new PKD treatment option. The trial is expected to complete in 2028."
+    ],
+    "relatedDrugs": ["bempedoic-acid"],
+    "sourceUrl": "https://clinicaltrials.gov/study/NCT07282821",
+    "sourceName": "ClinicalTrials.gov",
+    "tags": ["bempedoic-acid", "BEAT-PKD", "phase-2", "AMPK", "repurposed"]
+  },
+  {
+    "id": "rotigotine-phase-2-adpkd-registered",
+    "title": "Dopamine Agonist Rotigotine Enters Phase 2 for ADPKD",
+    "date": "2026-03-01",
+    "category": "trial-update",
+    "summary": "A Phase 2 trial of rotigotine — a dopamine agonist currently used for Parkinson's disease — has been registered for ADPKD, exploring a novel mechanism targeting cAMP reduction through dopamine receptor activation in kidney tubules.",
+    "body": [
+      "A Phase 2 trial of rotigotine for ADPKD (NCT06291116) has been registered on ClinicalTrials.gov with an estimated start date of March 2026. Rotigotine is a dopamine agonist currently approved for Parkinson's disease and restless legs syndrome, delivered via transdermal patch.",
+      "The rationale for testing rotigotine in PKD is based on the discovery that dopamine receptors (particularly D1 and D5) are expressed in kidney tubular cells. Activation of these receptors reduces cyclic AMP (cAMP) levels — the same signaling pathway targeted by tolvaptan. Since elevated cAMP is a key driver of cyst growth and fluid secretion in ADPKD, dopamine agonists represent a potentially complementary approach.",
+      "The transdermal patch delivery system offers convenience advantages over tolvaptan's oral dosing and associated water balance challenges. However, dopamine agonists carry their own side effect profile including potential nausea, dizziness, and impulse control issues.",
+      "This trial represents yet another novel mechanism entering the PKD pipeline, further diversifying the range of approaches being explored. The trial is currently listed as not yet recruiting, and limited details about trial design, endpoints, and enrollment targets are available."
+    ],
+    "relatedDrugs": [],
+    "sourceUrl": "https://clinicaltrials.gov/study/NCT06291116",
+    "sourceName": "ClinicalTrials.gov",
+    "tags": ["rotigotine", "dopamine-agonist", "phase-2", "repurposed", "novel-mechanism"]
+  }
+]
