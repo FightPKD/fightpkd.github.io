@@ -1,5 +1,23 @@
 [
   {
+    "id": "juntendo-12-month-keto-results-wcn-2026",
+    "title": "Landmark Result: Ketogenic Therapy Shrinks Polycystic Kidneys in 12-Month Trial",
+    "date": "2026-05-28",
+    "category": "clinical-data",
+    "summary": "Juntendo University's 12-month interim results presented at WCN 2026 show that ketogenic metabolic therapy achieved what no drug has done before — actual kidney volume decrease in ADPKD patients, with a striking dose-response correlation between ketone levels and kidney shrinkage.",
+    "body": [
+      "In what may be the most significant dietary intervention result in PKD history, researchers at Juntendo University (Tokyo) presented 12-month interim data at the World Congress of Nephrology 2026 showing that ketogenic metabolic therapy reversed kidney growth in ADPKD patients. The results have been published in Kidney International Reports.",
+      "The single-arm open-label trial enrolled 10 patients (7 completed 12 months) with moderate-to-advanced ADPKD (Mayo Imaging Class C or higher, median eGFR 57). The primary finding: Total Kidney Volume (TKV) significantly decreased (paired t-test p=0.026, Wilcoxon p=0.016). In a disease where kidneys typically grow 5-10% per year, these kidneys actually shrank.",
+      "Perhaps most compelling was the dose-response relationship: mean blood ketone levels at 3 months showed a strong negative correlation with TKV change (Spearman rho = -0.86, p=0.012). In plain language — patients with higher ketone levels experienced more kidney shrinkage, supporting a causal mechanism rather than coincidence.",
+      "Liver volume also significantly decreased at both 3 and 12 months, and eGFR stabilized compared to historical pre-trial decline of approximately -5.6 mL/min/1.73m² per year. The intervention used a structured ketogenic diet with KetoCitra supplementation (BHB + alkaline citrate), individualized dietitian guidance, and digital self-monitoring.",
+      "For context, tolvaptan — the only approved PKD drug — merely slows kidney growth from +5.51%/year to +2.80%/year in the TEMPO 3:4 trial. Kidneys still grow on tolvaptan. This ketogenic intervention achieved actual reversal. The full trial has completed enrollment with over 50 participants plus a control group, with final results expected in approximately one year."
+    ],
+    "relatedDrugs": [],
+    "sourceUrl": "https://doi.org/10.1016/j.ekir.2026.105775",
+    "sourceName": "Kidney International Reports",
+    "tags": ["ketogenic-diet", "WCN-2026", "TKV-reduction", "juntendo", "KetoCitra", "dose-response"]
+  },
+  {
     "id": "farabursen-phase-3-design-era-2026",
     "title": "Novartis Unveils Global Phase 3 Trial Design for Farabursen at ERA 2026",
     "date": "2026-05-26",
