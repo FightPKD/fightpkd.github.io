@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Report an Error" description="Help us improve PKD Cure Tracker by reporting citation errors, broken links, or inaccurate information.">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-3xl font-bold text-gray-900 mb-4">Report an Error</h1>
+
+    <p class="text-lg text-gray-600 mb-8">
+      Accuracy is critical for a medical research resource. If you've found an incorrect citation, broken link, misspelled author name, or any other error on this site, please let us know so we can fix it.
+    </p>
+
+    <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+      <h2 class="text-xl font-semibold text-gray-900 mb-4">What to include</h2>
+      <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-8">
+        <li>Which page the error is on</li>
+        <li>What the error is (wrong DOI, incorrect statistic, misspelled name, broken link, etc.)</li>
+        <li>The correct information, if you know it</li>
+        <li>A link to the source, if available</li>
+      </ul>
+
+      <a
+        href="mailto:pkdcuretracker@gmail.com?subject=Error%20Report%20-%20PKD%20Cure%20Tracker&body=Page%20URL%3A%20%0A%0ADescription%20of%20error%3A%20%0A%0ACorrect%20information%20(if%20known)%3A%20%0A%0ASource%20link%3A%20"
+        class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Send Error Report
+      </a>
+
+      <p class="mt-4 text-sm text-gray-500">
+        Opens your email client. You can also email us directly at
+        <a href="mailto:pkdcuretracker@gmail.com" class="text-primary-600 hover:text-primary-700">pkdcuretracker@gmail.com</a>.
+      </p>
+    </div>
+
+    <div class="mt-8 text-gray-600">
+      <p>
+        All reports are reviewed and corrections are typically made within 24–48 hours. We appreciate every report — even small typos matter when it comes to medical information.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
