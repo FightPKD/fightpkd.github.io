@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Report Received" description="Thank you for helping improve PKD Cure Tracker.">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+    <div class="bg-green-50 border border-green-200 rounded-xl p-10">
+      <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <h1 class="text-2xl font-bold text-gray-900 mb-3">Report received!</h1>
+      <p class="text-gray-600 mb-6">
+        Thank you for helping us improve the accuracy of PKD Cure Tracker. We'll review your report and make corrections as soon as possible.
+      </p>
+      <a href="/" class="inline-flex items-center px-5 py-2.5 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors">
+        Back to Home
+      </a>
+    </div>
+  </div>
+</BaseLayout>

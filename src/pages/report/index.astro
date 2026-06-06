@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Report an Error" description="Help us improve PKD Cure Tracker by reporting citation errors, broken links, or inaccurate information.">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-3xl font-bold text-gray-900 mb-4">Report an Error</h1>
+
+    <p class="text-lg text-gray-600 mb-8">
+      Accuracy is critical for a medical research resource. If you've found an incorrect citation, broken link, misspelled author name, or any other error on this site, please let us know so we can fix it.
+    </p>
+
+    <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+      <form action="https://formsubmit.co/pkdcuretracker@gmail.com" method="POST" class="space-y-6">
+        <input type="hidden" name="_subject" value="Error Report — PKD Cure Tracker">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://pkdcuretracker.com/report/thanks">
+        <input type="text" name="_honey" style="display:none">
+
+        <div>
+          <label for="page" class="block text-sm font-medium text-gray-700 mb-1">Page where you found the error</label>
+          <input type="text" name="page" id="page" placeholder="e.g. /keto or /pipeline" class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-colors">
+        </div>
+
+        <div>
+          <label for="error_type" class="block text-sm font-medium text-gray-700 mb-1">Type of error</label>
+          <select name="error_type" id="error_type" class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-colors">
+            <option value="">Select one...</option>
+            <option value="wrong_citation">Wrong citation / DOI</option>
+            <option value="broken_link">Broken link</option>
+            <option value="wrong_author">Incorrect or misspelled author name</option>
+            <option value="wrong_statistic">Incorrect statistic or study outcome</option>
+            <option value="missing_citation">Missing citation</option>
+            <option value="outdated_info">Outdated information</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="description" class="block text-sm font-medium text-gray-700 mb-1">Description of the error <span class="text-red-500">*</span></label>
+          <textarea name="description" id="description" rows="4" required placeholder="Describe what's wrong and what the correct information should be..." class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-colors resize-y"></textarea>
+        </div>
+
+        <div>
+          <label for="source" class="block text-sm font-medium text-gray-700 mb-1">Source link (if available)</label>
+          <input type="url" name="source" id="source" placeholder="https://pubmed.ncbi.nlm.nih.gov/..." class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-colors">
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your email (optional, if you'd like a follow-up)</label>
+          <input type="email" name="email" id="email" placeholder="you@example.com" class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 outline-none transition-colors">
+        </div>
+
+        <button type="submit" class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors cursor-pointer">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+          </svg>
+          Submit Report
+        </button>
+      </form>
+    </div>
+
+    <div class="mt-8 text-gray-600">
+      <p>
+        All reports are reviewed and corrections are typically made within 24–48 hours. We appreciate every report — even small typos matter when it comes to medical information.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
