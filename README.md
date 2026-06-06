@@ -1,4 +1,4 @@
-# FightPKD
+# PKD Cure Tracker
 
 A website tracking the drug development pipeline and therapeutic research for Polycystic Kidney Disease (PKD/ADPKD) patients.
 
