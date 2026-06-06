@@ -32,12 +32,12 @@
   {
     "id": "atorvastatin",
     "name": "Atorvastatin",
-    "company": "Taipei Medical University",
+    "company": "Taipei Medical University Shuang Ho Hospital",
     "companyLocation": "Taipei, Taiwan",
     "phase": 2,
     "status": "enrolling_by_invitation",
     "trialName": "Atorvastatin + Sodium Bicarbonate Pilot",
-    "startDate": "2024",
+    "startDate": "2023-05",
     "estimatedCompletion": "2025-12",
     "mechanism": "Statin combined with acidosis correction to slow CKD progression in ADPKD",
     "participants": 30,
@@ -95,14 +95,14 @@
     "company": "Multiple Sponsors",
     "companyLocation": "Germany / Switzerland / USA",
     "phase": 2,
-    "status": "recruiting",
+    "status": "active_not_recruiting",
     "trialName": "EMPA-PKD / SIDIA / Colorado Feasibility",
-    "startDate": "2023",
+    "startDate": "2022-11",
     "estimatedCompletion": "2027-05",
     "mechanism": "SGLT2 inhibitor — testing safety in ADPKD with or without tolvaptan co-administration",
     "participants": 134,
     "nctId": "NCT06391450",
-    "notes": "Three parallel trials: EMPA-PKD (NCT06391450, Hannover, n=44), SIDIA (NCT06435858, Zurich, n=40, recruiting), Colorado Feasibility (NCT05510115, n=50)."
+    "notes": "Three parallel trials: EMPA-PKD (NCT06391450, Hannover, n=44, Phase 4, active not recruiting), SIDIA (NCT06435858, Graubuenden Switzerland, n=40, recruiting), Colorado Feasibility (NCT05510115, n=50, active not recruiting)."
   },
   {
     "id": "farabursen",
@@ -112,12 +112,12 @@
     "phase": 3,
     "status": "not_yet_recruiting",
     "trialName": "Phase 3 Registrational Trial",
-    "startDate": "2025",
-    "estimatedCompletion": "2028",
+    "startDate": "2026",
+    "estimatedCompletion": "2029",
     "mechanism": "Anti-miR-17 oligonucleotide — inhibits microRNA-17, restoring polycystin-1/2 protein production to reduce cyst growth. 300mg SC every 2 weeks.",
     "participants": 0,
-    "nctId": "NCT05521191",
-    "notes": "Phase 1b showed htTKV growth halted (0.05% vs 2.58% placebo). Novartis acquired Regulus for $1.7B (closed Jun 2025). Phase 3 registrational trial planned; data presented at ASN Kidney Week 2025 and WCN 2026."
+    "nctId": "",
+    "notes": "Phase 1b (NCT05521191, 68 patients, completed) showed htTKV growth halted (0.05% vs 2.58% placebo). Novartis acquired Regulus for $1.7B (closed Jun 2025). Phase 3 registrational trial design presented at ERA 2026 (Abstract #3398); no Phase 3 NCT ID registered yet."
   },
   {
     "id": "jmkx003142",
@@ -190,7 +190,7 @@
     "startDate": "2026-03",
     "estimatedCompletion": "2028",
     "mechanism": "Dopamine D5 receptor agonist (transdermal patch) — restores endothelial mechanosensitivity and NO release",
-    "participants": 0,
+    "participants": 120,
     "nctId": "NCT06291116",
     "notes": "Prior IMPROVE-PKD study showed beneficial effects over 2 months. Addresses defective polycystin-mediated mechanotransduction."
   },
@@ -250,8 +250,8 @@
     "startDate": "2007",
     "estimatedCompletion": "",
     "mechanism": "Vasopressin V2 receptor antagonist — blocks cAMP-driven cyst fluid secretion and cell proliferation",
-    "participants": 2803,
+    "participants": 1445,
     "nctId": "NCT00428948",
-    "notes": "FDA approved April 2018 for ADPKD. The only drug specifically approved for PKD. Requires liver monitoring (REMS program). Causes significant polyuria (4–8L/day urine)."
+    "notes": "FDA approved April 2018 for ADPKD. The only drug specifically approved for PKD. Requires liver monitoring (REMS program). Causes significant polyuria (4–8L/day urine). TEMPO 3:4 enrolled 1,445; REPRISE (NCT02160145) enrolled 1,370 additional patients."
   }
 ]

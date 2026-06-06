@@ -43,8 +43,11 @@ Before pushing updates, verify:
 - [ ] Drug phases match ClinicalTrials.gov
 - [ ] Status values use allowed enum: `recruiting`, `not_yet_recruiting`, `active_not_recruiting`, `completed`, `enrolling_by_invitation`
 - [ ] Dates use YYYY or YYYY-MM format
-- [ ] NCT IDs are valid (format: NCTxxxxxxxx)
+- [ ] NCT IDs are valid (format: NCTxxxxxxxx) and verified via CT.gov API
 - [ ] No broken internal links
+- [ ] DOIs resolve to the correct paper (spot-check at least 3 per update)
+- [ ] Author names match DOI/PubMed metadata exactly
+- [ ] Numeric claims (p-values, enrollment counts) match source papers
 
 ## SEO Requirements
 

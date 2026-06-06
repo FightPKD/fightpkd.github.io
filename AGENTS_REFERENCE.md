@@ -191,6 +191,58 @@ When searching, use these alternative names:
 | Empagliflozin | EMPA-PKD, SIDIA, Jardiance |
 | Metformin | IMPEDE-PKD, TAME-PKD |
 
+## Citation Standards
+
+All scientific claims on this site must be traceable to primary sources. LLM-generated content is prone to hallucinated DOIs, misspelled author names, and conflated study details. Follow these rules strictly:
+
+### DOI Requirements
+- Every published paper referenced in any data file **MUST** have a DOI.
+- Conference abstracts without DOIs get presentation venue + date instead.
+- Recruiting trials with no publication get NCT ID only.
+- **Before adding a DOI**, verify it resolves via `https://doi.org/{doi}` — the redirect should land on the correct publisher and paper.
+
+### DOI Prefix Validation
+The DOI prefix identifies the publisher. Common prefixes in our data:
+| Prefix | Publisher |
+|--------|-----------|
+| `10.1016` | Elsevier (Cell Metabolism, Kidney International Reports, iScience, Metabolism Open) |
+| `10.3389` | Frontiers (Frontiers in Nutrition) |
+| `10.1172` | JCI (Journal of Clinical Investigation) |
+| `10.1152` | American Physiological Society (Am J Physiol Renal) |
+| `10.1093` | Oxford University Press (Journal of Nephrology) |
+| `10.1681` | ASN (JASN) |
+
+If the DOI prefix doesn't match the claimed journal's publisher, the DOI is likely wrong.
+
+### Author Name Rules
+- List first author, last/senior author, and corresponding author at minimum.
+- Spell names **exactly** as they appear on the paper's DOI metadata or PubMed listing.
+- Never use "Multiple" or "Various" as an author placeholder — find at least first and last author.
+- Common pitfalls: Kruger vs Kruber, Müller vs Mueller, Gina vs Gail, Kyaw vs Kody.
+
+### Study Outcome Accuracy
+- Numeric claims (p-values, percentages, sample sizes, correlation coefficients) must be copied **verbatim** from the paper abstract or results.
+- Never paraphrase statistics — "P<0.001" is not the same as "P<0.0001".
+- Enrollment numbers must match ClinicalTrials.gov `EnrollmentInfo` (use "actual" when available, "estimated" when trial is ongoing).
+- If citing a subgroup result, explicitly state the subgroup size (e.g., "SNK subgroup, n=17").
+
+### Source URL Rules
+- Every news item must link to a primary source: DOI link, ClinicalTrials.gov study page, or official press release.
+- Don't link to secondary coverage (news articles about a paper) when the paper itself is accessible.
+- Verify URLs resolve (HTTP 200) before committing.
+
+### NCT ID Rules
+- Use the ClinicalTrials.gov API to verify: `https://clinicaltrials.gov/api/v2/studies/{NCT_ID}`
+- If a drug entry describes a planned/future trial that hasn't been registered yet, leave `nctId` empty and note this in the `notes` field.
+- Don't use the NCT ID of a completed Phase 1 trial to represent a planned Phase 3 — they are different studies.
+
+### Verification Workflow
+When adding or updating any citation:
+1. Fetch `https://doi.org/{doi}` and confirm it redirects to the correct paper
+2. Compare first/last author names against the resolved page
+3. Confirm the journal name matches
+4. For NCT IDs, fetch from CT.gov API and verify status, enrollment, and sponsor match
+
 ## Pipeline Tracker Visual System
 
 The `PipelineTracker.astro` component uses a bar+circle design per phase. Key rules:
