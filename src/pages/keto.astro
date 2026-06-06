@@ -29,9 +29,31 @@ const statusColors: Record<string, string> = {
   interim: 'text-amber-700',
   recruiting: 'text-emerald-700',
 };
+
+const ketoSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Ketogenic Diet & PKD Research",
+  "url": "https://pkdcuretracker.com/keto",
+  "description": "Comprehensive overview of ketogenic diet and KetoCitra research for Polycystic Kidney Disease.",
+  "about": [
+    { "@type": "MedicalTherapy", "name": "Ketogenic Diet", "medicineSystem": "WesternConventional" },
+    { "@type": "MedicalCondition", "name": "Autosomal Dominant Polycystic Kidney Disease" }
+  ],
+  "specialty": { "@type": "MedicalSpecialty", "name": "Nephrology" },
+  "lastReviewed": "2026-06-05",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pkdcuretracker.com" },
+      { "@type": "ListItem", "position": 2, "name": "Keto & PKD Research", "item": "https://pkdcuretracker.com/keto" }
+    ]
+  }
+};
 ---
 
-<BaseLayout title="Keto & PKD Research" description="Comprehensive overview of ketogenic diet and KetoCitra research for Polycystic Kidney Disease.">
+<BaseLayout title="Keto & PKD Research" description="Comprehensive overview of ketogenic diet and KetoCitra research for Polycystic Kidney Disease." keywords="ketogenic diet PKD, keto polycystic kidney disease, KetoCitra, KETO-ADPKD trial, Thomas Weimbs, ketosis kidney cysts, BHB PKD">
+  <script type="application/ld+json" set:html={JSON.stringify(ketoSchema)} slot="head" />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="lg:grid lg:grid-cols-[1fr_250px] lg:gap-12">
       <article class="prose-content">

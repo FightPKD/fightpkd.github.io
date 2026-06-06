@@ -10,9 +10,35 @@ const sortedDrugs = [...drugs].sort((a, b) => {
   if (phaseSort !== 0) return phaseSort;
   return (statusOrder[a.status] ?? 5) - (statusOrder[b.status] ?? 5);
 });
+const pipelineSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "PKD Drug Pipeline",
+  "description": "Track all drugs currently in clinical trials for Polycystic Kidney Disease (PKD/ADPKD).",
+  "url": "https://pkdcuretracker.com/pipeline",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pkdcuretracker.com" },
+      { "@type": "ListItem", "position": 2, "name": "Drug Pipeline", "item": "https://pkdcuretracker.com/pipeline" }
+    ]
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "PKD Drugs in Clinical Trials",
+    "numberOfItems": drugs.length,
+    "itemListElement": sortedDrugs.map((d: any, i: number) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": `${d.name} (Phase ${d.phase})`,
+      "url": `https://pkdcuretracker.com/pipeline`
+    }))
+  }
+};
 ---
 
-<BaseLayout title="Drug Pipeline" description="Track all drugs currently in clinical trials for Polycystic Kidney Disease (PKD/ADPKD).">
+<BaseLayout title="Drug Pipeline" description="Track all drugs currently in clinical trials for Polycystic Kidney Disease (PKD/ADPKD)." keywords="PKD drugs, ADPKD clinical trials, tolvaptan, farabursen, dapagliflozin PKD, polycystic kidney disease treatment pipeline">
+  <script type="application/ld+json" set:html={JSON.stringify(pipelineSchema)} slot="head" />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="mb-8">
       <h1 class="text-3xl font-bold text-gray-900">Drug Pipeline</h1>

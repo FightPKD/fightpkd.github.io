@@ -15,9 +15,37 @@ const recruitingCount = drugs.filter(d => d.status === 'recruiting').length;
 const totalDrugs = drugs.length;
 const ketoStudyCount = Object.keys(ketoStudies).length;
 const lastUpdated = 'June 5, 2026';
+
+const homepageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "PKD Cure Tracker",
+  "url": "https://pkdcuretracker.com",
+  "description": "Comprehensive dashboard tracking drug development and therapeutic research for Polycystic Kidney Disease (PKD/ADPKD) patients.",
+  "about": {
+    "@type": "MedicalCondition",
+    "name": "Polycystic Kidney Disease",
+    "alternateName": ["PKD", "ADPKD", "Autosomal Dominant Polycystic Kidney Disease"],
+    "code": { "@type": "MedicalCode", "code": "Q61.2", "codingSystem": "ICD-10" }
+  },
+  "specialty": { "@type": "MedicalSpecialty", "name": "Nephrology" },
+  "lastReviewed": "2026-06-05",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "PKD Drug Pipeline",
+    "numberOfItems": totalDrugs,
+    "itemListElement": drugs.slice(0, 5).map((d: any, i: number) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": d.name,
+      "url": `https://pkdcuretracker.com/pipeline`
+    }))
+  }
+};
 ---
 
-<BaseLayout title="Home" description="PKD Cure Tracker — Tracking the drug development pipeline and therapeutic research for Polycystic Kidney Disease patients.">
+<BaseLayout title="Home" description="PKD Cure Tracker — Tracking the drug development pipeline and therapeutic research for Polycystic Kidney Disease patients." keywords="PKD, ADPKD, polycystic kidney disease, drug pipeline, clinical trials, tolvaptan, farabursen, ketogenic diet PKD, kidney disease treatment, PKD research 2026">
+  <script type="application/ld+json" set:html={JSON.stringify(homepageSchema)} slot="head" />
   <section class="relative">
     <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 pb-16">

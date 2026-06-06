@@ -14,9 +14,25 @@ const therapiesByCategory = categories.map(cat => ({
   ...cat,
   items: therapies.filter(t => t.category === cat.key)
 })).filter(cat => cat.items.length > 0);
+
+const therapiesSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "PKD Therapeutic Research",
+  "url": "https://pkdcuretracker.com/therapies",
+  "description": "Evidence-based therapeutic approaches and lifestyle interventions being studied for PKD.",
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pkdcuretracker.com" },
+      { "@type": "ListItem", "position": 2, "name": "Therapeutic Research", "item": "https://pkdcuretracker.com/therapies" }
+    ]
+  }
+};
 ---
 
-<BaseLayout title="Therapeutic Research" description="Evidence-based therapeutic approaches and lifestyle interventions being studied for PKD.">
+<BaseLayout title="Therapeutic Research" description="Evidence-based therapeutic approaches and lifestyle interventions being studied for PKD." keywords="PKD therapy, ADPKD treatment, ketogenic diet kidney disease, metformin PKD, time restricted eating PKD, water intake PKD">
+  <script type="application/ld+json" set:html={JSON.stringify(therapiesSchema)} slot="head" />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="mb-8">
       <h1 class="text-3xl font-bold text-gray-900">Therapeutic Research</h1>
