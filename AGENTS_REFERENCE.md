@@ -1,6 +1,6 @@
-# FightPKD — Agent Reference Guide
+# PKD Cure Tracker — Agent Reference Guide
 
-This file is a structured guide for AI agents to understand, update, and maintain the FightPKD website data.
+This file is a structured guide for AI agents to understand, update, and maintain the PKD Cure Tracker website data.
 
 **IMPORTANT:** Before making changes, read `CONSTITUTION.md` — it defines update rules, the sources log to maintain, and validation checklist.
 
