@@ -24,7 +24,10 @@ function isActive(href: string): boolean {
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <a href="/" class="flex items-center">
-        <img src="/logo.png" alt="PKD Cure Tracker" class="h-14 w-auto" />
+        <picture>
+          <source srcset="/logo.webp" type="image/webp" />
+          <img src="/logo-small.png" alt="PKD Cure Tracker" class="h-14 w-auto" width="408" height="168" />
+        </picture>
       </a>
 
       <div class="hidden md:flex items-center gap-1">
